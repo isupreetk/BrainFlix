@@ -1,3 +1,7 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
 .header {
     border: 1px solid black;
 
@@ -5,19 +9,44 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row;
+            height: 75px;
+        }
+
+        @include desktop {
+            height: 100px;
+        }
     }
 
     &__content {
 
+        display: inline-flex;
+        align-items: center;
+    
         &--left {
             justify-content: flex-start;
+
+            @include tablet { 
+                margin: 0px;
+            }
+
+            @include desktop {
             width: 40%;
+            }
         }
 
         &--right {
-            justify-content: flex-end;
-            width: 60%;
+            justify-content: center;
 
+            @include desktop {
+            width: 60%;
+            }
         }
     }
 
@@ -26,7 +55,14 @@
         // justify-content: flex-start;
         // align-items: center;
         // width: 20%;
-        margin: 3rem;
+
+        @include mobile {
+            margin: 3rem auto 1rem auto;
+        }
+
+        @include tablet {
+            margin: 3rem;
+    }
     }
 
     &__search-wrapper {

@@ -2,6 +2,73 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/fonts" as *;
 
-.App {
-  text-align: center;
+// .App {
+//   text-align: center;
+// }
+
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 175px;
+  margin-bottom: 1rem;
+
+
+  &__header {
+    display: flex;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__image {
+    display: inline-flex;
+    // width: 30%;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__login-image {
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 0rem;
+  }
+
+  &__content {
+    display: inline-flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 35px;
+  }
+
+  &__subheading {
+    margin-bottom: 0.3rem;
+  }
+
+  &__form {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+
+  &__comment-wrapper {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0095FF;
+    margin-left: 0.5rem;
+  }
+
+  &__comment-icon {
+    background-color: #0095FF;
+  }
+
+  &__comment-text {
+    color: white;
+    align-items: center;
+    // margin-left: 1rem;
+  }
+
 }

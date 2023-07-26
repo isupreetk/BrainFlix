@@ -1,3 +1,7 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
 .video-section {
     width: 100%;
     // align-items: center;
@@ -49,6 +53,24 @@
     &__icons {
         margin-left: 20px;
         margin-right: 10px;
+    }
+
+    &__description {
+        display: flex;
+    // justify-content: flex-start;
+    // /* margin-left: 11rem; */
+    // /* margin-right: 4rem; */
+    // /* margin: 1rem 9rem; */
+    // /* width: 80%; */
+    // align-items: flex-start;
+    }
+
+    &__description-container {
+        display: flex;
+        justify-content: flex-start;
+        /* align-items: flex-start; */
+        /* width: 80%; */
+        margin-left: 175px;
     }
 
 }
