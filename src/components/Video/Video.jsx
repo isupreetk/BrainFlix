@@ -1,9 +1,9 @@
-import "./VideoSection.scss";
+import "./Video.scss";
 import ViewsIcon from "../../assets/icons/views.svg"
 import LikeIcon from "../../assets/icons/likes.svg"
 
 
-function VideoSection() {
+function Video() {
     return (
         <>
             <section className="video-section">
@@ -33,4 +33,4 @@ function VideoSection() {
     );
 }
 
-export default VideoSection;
+export default Video;
