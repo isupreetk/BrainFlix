@@ -15,11 +15,17 @@ function Comment(props) {
     //   }
     // console.log(props.videoDetailsComments)
 
+    // console.log(props.videoDetailsJSON[0].comments);
+    // videoDetailsJSON[0].comments;
+
+    // console.log(props.selectedVideoDetail);
+
     return (
 
+        
         <div className="comments">
 
-            {props.videoDetailsComments?.map((comment, index) => {
+            {props.selectedVideoDetail.comments.map((comment) => {
                 // console.log("Comments object is: ", comment);
                 // console.log("Comment Name is: ", comment.name);
                 // console.log("Comment Date is: ", comment.timestamp);
@@ -28,7 +34,6 @@ function Comment(props) {
                 return (
                     
                         <div className="comments__container" key={comment.id}>
-                        {/* <div key={index}> */}
                             <div className="comments__image-div">
                                 <img className="comments__image" src="" alt="" />
                             </div>
