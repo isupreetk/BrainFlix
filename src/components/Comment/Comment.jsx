@@ -13,17 +13,17 @@ function Comment(props) {
     //     "likes": 0,
     //     "timestamp": 1626011132000
     //   }
-    console.log(props.videoDetailsComments)
+    // console.log(props.videoDetailsComments)
 
     return (
 
         <div className="comments">
 
             {props.videoDetailsComments?.map((comment, index) => {
-                console.log("Comments object is: ", comment);
-                console.log("Comment Name is: ", comment.name);
-                console.log("Comment Date is: ", comment.timestamp);
-                console.log("Comment is: ", comment.comment);
+                // console.log("Comments object is: ", comment);
+                // console.log("Comment Name is: ", comment.name);
+                // console.log("Comment Date is: ", comment.timestamp);
+                // console.log("Comment is: ", comment.comment);
                 // key={comment.id};
                 return (
                     

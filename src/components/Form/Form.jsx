@@ -12,7 +12,7 @@ function Form() {
     // console.log(VideoDetailsJSON[0].comments);
 
     const videoDetailsComments = videoDetailsJSON[0].comments;
-    console.log('videoDetailsComments', videoDetailsComments)
+    // console.log('videoDetailsComments', videoDetailsComments)
     
     return (
         <>
@@ -27,7 +27,7 @@ function Form() {
             <form className="form-section__form">
               <input type="text" name="comment" id="comment" placeholder="Add a new comment"></input>
               <div className="form-section__comment-wrapper">
-                <img className="form-section__comment-icon" src={CommentIcon} />
+                <img className="form-section__comment-icon" src={CommentIcon} alt="Comment Icon"/>
                 <span className="form-section__comment-text">COMMENT</span>
               </div>
 
