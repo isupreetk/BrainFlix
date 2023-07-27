@@ -1,10 +1,21 @@
 import "./Form.scss";
+import Comment from "../Comment/Comment";
 
 import LoginImage from "../../assets/images/Mohan-muruge.jpg"
 import CommentIcon from "../../assets/icons/add_comment.svg"
 
+import videoDetailsJSON from "../../assets/data/video-details.json"
+
 function Form() {
+
+    // console.log(VideoDetailsJSON);
+    // console.log(VideoDetailsJSON[0].comments);
+
+    const videoDetailsComments = videoDetailsJSON[0].comments;
+    console.log('videoDetailsComments', videoDetailsComments)
+    
     return (
+        <>
         <section className="form-section">
         <h3 className="form-section__header">3 Comments</h3>
         <div className="form-section__container">
@@ -24,6 +35,9 @@ function Form() {
           </div>
         </div>
       </section>
+
+      <Comment videoDetailsComments={videoDetailsComments} />
+      </>
     );
 }
 
