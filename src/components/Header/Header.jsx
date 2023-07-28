@@ -1,4 +1,5 @@
 import "./Header.scss";
+import Avatar from "../Avatar/Avatar";
 
 import BrainFlixLogo from "../../assets/logo/BrainFlix-logo.svg"
 // import SearchIcon from "./assets/icons/search.svg"
@@ -26,9 +27,11 @@ function Header() {
                             <span className="header__upload-text">UPLOAD</span>
                         </div>
 
-                        <div className="header__login-wrapper">
+                        {/* <div className="header__login-wrapper">
                             <img className="header__login-image" src={LoginImage} />
-                        </div>
+                        </div> */}
+
+                        <Avatar src={LoginImage} className="avatar__image avatar__image--header" />
 
                     </div>
                 </div>

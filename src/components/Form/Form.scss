@@ -18,18 +18,18 @@
       display: flex;
     }
   
-    &__image {
-      display: inline-flex;
-      align-items: center;
-      margin-top: auto;
-    }
+    // &__image {
+    //   display: inline-flex;
+    //   align-items: center;
+    //   margin-top: auto;
+    // }
   
-    &__login-image {
-      border-radius: 50%;
-      height: 2.5rem;
-      width: 2.5rem;
-      margin-left: 0rem;
-    }
+    // &__login-image {
+    //   border-radius: 50%;
+    //   height: 2.5rem;
+    //   width: 2.5rem;
+    //   margin-left: 0rem;
+    // }
   
     &__content {
       display: inline-flex;
@@ -53,10 +53,16 @@
       align-items: center;
       background-color: #0095FF;
       margin-left: 0.5rem;
+      height: 40px;
+
+
+      &:hover {
+        background-color: #0065AD;
+      }
     }
   
     &__comment-icon {
-      background-color: #0095FF;
+      // background-color: #0095FF;
     }
   
     &__comment-text {

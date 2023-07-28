@@ -1,0 +1,27 @@
+.avatar {
+
+    &__wrapper {
+    display: inline-flex;
+    }
+
+    &__image {
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+
+        &--header {
+            margin-left: 3rem;
+        }
+
+        &--form {
+            margin-top: 1rem;
+        }
+
+        &--comments {
+            background-color: #E1E1E1;
+            margin-top: 1rem;
+            margin-right: 1rem;
+        }
+        }
+    }
+
