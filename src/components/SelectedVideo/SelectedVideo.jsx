@@ -14,7 +14,7 @@ function Video(props) {
                     <div className="video-section__about">
                         <div className="video-section__detail">
                             <h4 className="video-section__artist-date">By {props.selectedVideoDetail.channel}</h4>
-                            <h4 className="video-section__artist-date">{props.selectedVideoDetail.timestamp}</h4>
+                            <h4 className="video-section__artist-date">{props.formatDateDDMMYYYY(props.selectedVideoDetail.timestamp)}</h4>
                         </div>
                         <div className="video-section__views">
                             <img className="video-section__icons" src={ViewsIcon} alt="Views Icon" />{props.selectedVideoDetail.views}

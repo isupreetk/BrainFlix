@@ -19,15 +19,20 @@ function App() {
     setSelectedVideoDetail(newVideoSelection);
   }
 
+  function formatDateDDMMYYYY(date) {
+    let formattedDate = new Date(date).toDateString();
+    return formattedDate;
+  }
+
   return (
     <div className="App">
       <Header />
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
-          <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
+          <SelectedVideo selectedVideoDetail={selectedVideoDetail} formatDateDDMMYYYY={formatDateDDMMYYYY} />
           <Form />
-          <Comment selectedVideoDetail={selectedVideoDetail} />
+          <Comment selectedVideoDetail={selectedVideoDetail} formatDateDDMMYYYY={formatDateDDMMYYYY} />
         </div>
 
         <div className="sidebar sidebar--right">
