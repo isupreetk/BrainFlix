@@ -1,8 +1,12 @@
 .next-video {
-    
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+
+    list-style-type: none;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
     // &__image-container {
 

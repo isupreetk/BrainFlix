@@ -13,10 +13,10 @@ function VideoList(props) {
             })
             .map((video) => {
                 return (
-                    <li onClick={() => {
+                    <li className="next-video" onClick={() => {
                         props.handleVideoSelection(video.id)
                     }} key={video.id}>
-                        <div className="next-video" >
+                        <div className="next-video__container" >
                             <div className="next-video__image-container">
                                 <img src={video.image} alt="" className="next-video__image"/>
                             </div>
