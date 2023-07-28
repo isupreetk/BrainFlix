@@ -4,15 +4,7 @@ import "./Form.scss";
 import LoginImage from "../../assets/images/Mohan-muruge.jpg"
 import CommentIcon from "../../assets/icons/add_comment.svg"
 
-// import videoDetailsJSON from "../../assets/data/video-details.json"
-
 function Form() {
-// console.log("form props: ",props);
-    // console.log(VideoDetailsJSON);
-    // console.log(VideoDetailsJSON[0].comments);
-
-    // const videoDetailsComments = videoDetailsJSON[0].comments;
-    // console.log('videoDetailsComments', videoDetailsComments)
     
     return (
         <>
@@ -36,7 +28,6 @@ function Form() {
         </div>
       </section>
 
-      {/* <Comment videoDetailsComments={videoDetailsComments} /> */}
       {/* <Comment videoDetailsJSON={props.videoDetailsJSON} /> */}
       </>
     );

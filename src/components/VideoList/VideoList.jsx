@@ -2,7 +2,6 @@ import "./VideoList.scss";
 
 function VideoList(props) {
 
-    // console.log("Next video props:" ,props.videoDetails);
     return (
         <>
         <h1>NEXT VIDEO</h1>

@@ -13,11 +13,7 @@ function App() {
   const [ videoDetails, setVideoDetails ] = useState(videoDetailsJSON);
   const [ selectedVideoDetail, setSelectedVideoDetail ] = useState(videoDetailsJSON[0]);
 
-console.log(videoDetails);
-
   function handleVideoSelection(id) {
-    // console.log("item clicked");
-    // console.log(id);
     let newVideoSelection = videoDetails.find((video) => video.id === id)
     setSelectedVideoDetail(newVideoSelection);
   }

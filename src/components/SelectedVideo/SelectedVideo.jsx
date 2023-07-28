@@ -2,14 +2,7 @@ import "./SelectedVideo.scss";
 import ViewsIcon from "../../assets/icons/views.svg"
 import LikeIcon from "../../assets/icons/likes.svg"
 
-// import videoDetailsJSON from "../../assets/data/video-details.json"
-
-
 function Video(props) {
-
-    // console.log(videoDetailsJSON);
-    // let {selectedVideoDetail} = props;
-    // console.log(props.selectedVideoDetail);
 
     return (
        

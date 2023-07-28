@@ -4,8 +4,6 @@
 
 .video-section {
     width: 100%;
-    // align-items: center;
-    // justify-content: flex-start;
 
     &__player {
         width: 100%;
@@ -21,7 +19,6 @@
 
     &__heading {
         display: flex;
-        // width: 100%;
         margin-left: 175px;
 
     }
@@ -57,19 +54,11 @@
 
     &__description {
         display: flex;
-    // justify-content: flex-start;
-    // /* margin-left: 11rem; */
-    // /* margin-right: 4rem; */
-    // /* margin: 1rem 9rem; */
-    // /* width: 80%; */
-    // align-items: flex-start;
     }
 
     &__description-container {
         display: flex;
         justify-content: flex-start;
-        /* align-items: flex-start; */
-        /* width: 80%; */
         margin-left: 175px;
     }
 
