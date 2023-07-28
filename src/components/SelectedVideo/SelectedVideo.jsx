@@ -7,7 +7,6 @@ function Video(props) {
     return (
        
             <section className="video-section">
-             <video className="video-section__player" src="" poster={props.selectedVideoDetail.image} controls></video>
                 <div className="video-section__container">
                     <div className="video-section__heading">
                         <h2>{props.selectedVideoDetail.title}</h2>

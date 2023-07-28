@@ -2,7 +2,9 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/fonts" as *;
 
-// .App {
+.App {
 //   text-align: center;
-// }
+display: flex;
+flex-direction: column;
+}
 
