@@ -18,9 +18,13 @@ function Header() {
                     </div>
 
                     <div className="header__content header__content--right">
-                        <div className="header__search-wrapper">
-                            {/* <input type="image" name="searchIcon" id="searchIcon" src={SearchIcon}/> */}
-                            <input type="text" name="search" id="search" className="header__search-bar" placeholder="Search" />
+                        <div className="header__content header__content--alternate">
+                            <div className="header__search-wrapper">
+                                {/* <input type="image" name="searchIcon" id="searchIcon" src={SearchIcon}/> */}
+                                <input type="text" name="search" id="search" className="header__search-bar" placeholder="Search" />
+                            </div>
+                            <Avatar src={LoginImage} className="avatar__image avatar__image--alternate-header" />
+
                         </div>
                         <div className="header__upload-wrapper">
                             <img className="header__upload-image" src={UploadBtn} />

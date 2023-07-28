@@ -15,25 +15,51 @@
     &__container {
         display: flex;
         flex-direction: column;
-        border-bottom: 2px solid black;
+        // border-bottom: 2px solid black;
     }
 
     &__heading {
         display: flex;
-        margin-left: 175px;
 
+        @include mobile {
+        margin-left: 20px;
+        }
+
+        @include tablet {
+        margin-left: 175px;
+    }
     }
 
     &__about {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include mobile {
+            margin-left: 20px;
+        }
+
+        @include tablet {
+            border-bottom: 1px solid #E1E1E1;
+        }
     }
 
     &__detail {
         display: inline-flex;
         justify-content: space-around;
         width: 70%;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        @include desktop {
+            margin-left: 125px;
+        }
     }
 
     &__artist-date {
@@ -46,6 +72,14 @@
         display: inline-flex;
         justify-content: flex-start;
         width: 30%;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
     }
 
     &__icons {
@@ -60,7 +94,14 @@
     &__description-container {
         display: flex;
         justify-content: flex-start;
-        margin-left: 175px;
+
+        @include mobile {
+            margin-left: 20px;
+        }
+
+        @include tablet {
+            margin-left: 175px;
+        }
     }
 
 }

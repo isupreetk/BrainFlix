@@ -4,7 +4,8 @@ function VideoList(props) {
 
     return (
         <>
-        <h1>NEXT VIDEO</h1>
+        <h5 className="next-video__heading">NEXT VIDEOS</h5>
+
         <ul>
             {
             props.videoDetails

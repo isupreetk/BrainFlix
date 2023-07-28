@@ -5,9 +5,16 @@
 .form-section {
     display: flex;
     flex-direction: column;
-    margin-left: 175px;
     margin-bottom: 1rem;
+
+    @include mobile {
+      margin-left: 20px;
+    }
   
+    @include tablet {
+      margin-left: 175px;
+
+    }
   
     &__header {
       display: flex;
@@ -16,6 +23,9 @@
   
     &__container {
       display: flex;
+
+      padding-bottom: 1rem;
+      // border-bottom: 1px solid #e1e1e1;
     }
   
     // &__image {
@@ -39,14 +49,35 @@
     }
   
     &__subheading {
+      color: #AFAFAF;
       margin-bottom: 0.3rem;
     }
   
     &__form {
       display: flex;
       align-items: center;
+
+      @include mobile {
+        flex-direction: column;
+        // justify-content: center;
+      }
+
+      @include tablet {
+        flex-direction: row;
+      }
     }
   
+    &__input {
+
+      border: 2px solid #E1E1E1;
+      background-color: #FAFAFA;
+
+      &:focus {
+        border: 2px solid #0095FF;
+        outline: none;
+    }
+    }
+
     &__comment-wrapper {
       display: inline-flex;
       justify-content: space-evenly;
@@ -54,6 +85,7 @@
       background-color: #0095FF;
       margin-left: 0.5rem;
       height: 40px;
+      border-radius: 4px;
 
 
       &:hover {
@@ -63,11 +95,14 @@
   
     &__comment-icon {
       // background-color: #0095FF;
+      padding-left: 10px;
     }
   
     &__comment-text {
       color: white;
       align-items: center;
+      width: 100px;
+      padding: 0px 20px 0px 32px;
     }
   
   }

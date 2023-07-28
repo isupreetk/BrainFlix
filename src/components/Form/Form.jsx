@@ -21,7 +21,7 @@ function Form() {
           <div className="form-section__content">
             <h5 className="form-section__subheading">JOIN THE CONVERSATION</h5>
             <form className="form-section__form">
-              <input type="text" name="comment" id="comment" placeholder="Add a new comment"></input>
+              <input type="text" name="comment" className="form-section__input" id="comment" placeholder="Add a new comment"></input>
               <div className="form-section__comment-wrapper">
                 <img className="form-section__comment-icon" src={CommentIcon} alt="Comment Icon"/>
                 <span className="form-section__comment-text">COMMENT</span>

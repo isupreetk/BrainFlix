@@ -2,6 +2,11 @@
 
     list-style-type: none;
 
+    &__heading {
+        color: #AFAFAF;
+        margin-left: 1rem;
+    }
+
     &__container {
         display: flex;
         align-items: center;

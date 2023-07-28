@@ -1,3 +1,7 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
 .avatar {
 
     &__wrapper {
@@ -11,6 +15,25 @@
 
         &--header {
             margin-left: 3rem;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                display: flex;
+            }
+        }
+
+        &--alternate-header {
+
+            @include mobile {
+                display: inline-flex;
+            }
+
+            @include tablet {
+                display: none;
+            }
         }
 
         &--form {

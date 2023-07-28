@@ -2,10 +2,12 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
+
+
 .header {
     display: flex;
-
     border: 1px solid black;
+    // margin: 0px;
 
     &__container {
         display: flex;
@@ -30,7 +32,19 @@
 
         display: inline-flex;
         align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
     
+        &--alternate {
+            flex-direction: row;
+        }
+
         &--left {
             justify-content: flex-start;
 
@@ -39,7 +53,8 @@
             }
 
             @include desktop {
-            width: 40%;
+            // width: 40%;
+            margin-right: 380px;
             }
         }
 
@@ -47,7 +62,7 @@
             justify-content: center;
 
             @include desktop {
-            width: 60%;
+            // width: 60%;
             }
         }
     }
@@ -64,25 +79,53 @@
     }
     }
 
+    &__logo {
+        height: 25px;
+        width: 120px;
+    }
+
     &__search-wrapper {
         display: inline-flex;
-        margin: 3rem;
+        
+        @include mobile {
+            margin-left: 1rem;
+        }
+
+        @include tablet {
+            margin: 3rem;
+        }
     }
 
     &__search-bar {
-        background: url(http://localhost:3000/static/media/search.b2de04b….svg) no-repeat scroll 8px 10px;
+        background: url("../../assets/icons/search.svg") no-repeat scroll 8px 10px;
         padding-left: 35px;
         height: 35px;
         width: 200px;
         border-radius: 6px;
+        border: 2px solid #E1E1E1;
+        background-color: #FAFAFA;
+
+        &:focus {
+            border: 2px solid #0095FF;
+            outline: none;
+        }
     }
 
     &__upload-wrapper {
-        display: inline-flex;
         justify-content: space-evenly;
         align-items: center;
         background-color: #0095FF;
         height: 40px;
+        border-radius: 4px;
+
+        @include mobile {
+            display: flex;
+        }
+
+        @include tablet {
+        display: inline-flex;
+
+        }
 
         &:hover {
             background-color: #0065AD;
@@ -91,11 +134,15 @@
 
     &__upload-image {
         // background-color: #0095FF;
+        padding-left: 10px;
     }
 
     &__upload-text {
         color: white;
         align-items: center;
+        width: 100px;
+        padding: 0px 20px 0px 32px;
+
     }
 
     // &__login-wrapper {

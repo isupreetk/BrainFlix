@@ -2,24 +2,54 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/fonts" as *;
 
+// input[type="text"]:focus{
+//         border-color: red;
+
+//     // &:blur {
+//     //     border-color: orchid;
+//     // }
+// }
+
 .App {
 //   text-align: center;
 display: flex;
 flex-direction: column;
+color: #323232;
 }
 
 .sidebar-container {
-    display: inline-flex;
 
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include tablet {
+    display: inline-flex;
+    flex-direction: row;
+}
 }
 
 .sidebar {
 
     &--left {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
         width: 60%;
+    }
     }
 
     &--right {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
         width: 40%;
+        border-left: 1px solid #e1e1e1;
+        }
     }
 }
