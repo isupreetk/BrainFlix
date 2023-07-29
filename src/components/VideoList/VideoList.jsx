@@ -8,7 +8,7 @@ function VideoList(props) {
 
         <ul>
             {
-            props.videoDetails
+            props.videos
             .filter((video) => {
                 return (video.id !== props.selectedVideoDetail.id);
             })

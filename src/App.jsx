@@ -7,11 +7,14 @@ import Form from "./components/Form/Form";
 import Comment from "./components/Comment/Comment";
 import VideoList from "./components/VideoList/VideoList";
 
-import videoDetailsJSON from "./assets/data/video-details.json"
+import videoDetailsJSON from "./assets/data/video-details.json";
+import videosJSON from "./assets/data/videos.json";
 
 function App() {
 
-  const [videoDetails, setVideoDetails] = useState(videoDetailsJSON);
+  const [videos, setVideos] = useState(videosJSON);
+  const [videoDetails, setVideoDetails] = useState(videoDetailsJSON)
+
   const [selectedVideoDetail, setSelectedVideoDetail] = useState(videoDetailsJSON[0]);
 
   function handleVideoSelection(id) {
@@ -36,7 +39,7 @@ function App() {
         </div>
 
         <div className="sidebar sidebar--right">
-          <VideoList videoDetails={videoDetails} selectedVideoDetail={selectedVideoDetail} handleVideoSelection={handleVideoSelection} />
+          <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail} handleVideoSelection={handleVideoSelection} />
         </div>
       </div>
     </div>
