@@ -79,6 +79,7 @@
 
         @include tablet {
             flex-direction: row;
+            margin-right: 2rem;
         }
     }
 
@@ -101,6 +102,7 @@
 
         @include tablet {
             margin-left: 175px;
+            margin-right: 1rem;
         }
     }
 

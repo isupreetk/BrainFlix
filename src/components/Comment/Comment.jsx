@@ -21,7 +21,7 @@ function Comment(props) {
                             <div className="comments__content-div">
                                 <div className="comments__detail">
                                     <p className="comments__detail-content comments__detail-content--left">{comment.name}</p>
-                                    <p className="comments__detail-content comments__detail-content--right">{props.formatDateDDMMYYYY(comment.timestamp)}</p>
+                                    <p className="comments__detail-content comments__detail-content--right">{props.dynamicTimestamp(comment.timestamp)}</p>
                                 </div>
                                 <div className="comments__comment">
                                     {comment.comment}
