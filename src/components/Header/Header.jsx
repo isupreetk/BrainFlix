@@ -2,7 +2,6 @@ import "./Header.scss";
 import Avatar from "../Avatar/Avatar";
 
 import BrainFlixLogo from "../../assets/logo/BrainFlix-logo.svg"
-// import SearchIcon from "./assets/icons/search.svg"
 import UploadBtn from "../../assets/icons/upload.svg"
 import LoginImage from "../../assets/images/Mohan-muruge.jpg"
 
@@ -20,7 +19,6 @@ function Header() {
                     <div className="header__content header__content--right">
                         <div className="header__content header__content--alternate">
                             <div className="header__search-wrapper">
-                                {/* <input type="image" name="searchIcon" id="searchIcon" src={SearchIcon}/> */}
                                 <input type="text" name="search" id="search" className="header__search-bar" placeholder="Search" />
                             </div>
                             <Avatar src={LoginImage} className="avatar__image avatar__image--alternate-header" />

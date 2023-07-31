@@ -8,10 +8,18 @@
 
     &__player {
         width: 100%;
-        height: 500px;
         background-color: #000000;
         background-position: center;
         background-size: cover;
         content: url("https://project-2-api.herokuapp.com/stream");
+
+        @include mobile {
+            height: 175px;
+        }
+
+        @include tablet {
+            height: 450px;
+        }
     }
+
 }

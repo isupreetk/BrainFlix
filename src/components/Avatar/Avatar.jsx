@@ -1,9 +1,9 @@
 import "./Avatar.scss";
 
-function Avatar(props) {
+function Avatar({className, src}) {
     return (
         <div className="avatar__wrapper">
-             <img className={props.className} src={props.src} />
+             <img className={className} src={src} />
         </div>
     );
 }

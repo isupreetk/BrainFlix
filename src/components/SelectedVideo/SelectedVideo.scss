@@ -18,16 +18,31 @@
         // border-bottom: 2px solid black;
     }
 
-    &__heading {
+    &__heading-container {
         display: flex;
 
         @include mobile {
-        margin-left: 20px;
+            // margin-left: 20px;
+            margin: 0rem 1rem;
+            border-bottom: 2px solid #E1E1E1;
         }
 
         @include tablet {
-        margin-left: 175px;
+            // margin-left: 175px;
+            margin-left: 2.3rem;
+        }
     }
+
+    &__heading {
+
+        @include mobile{
+            font-size: 1.5rem;
+        }
+
+        @include tablet {
+            font-size: 2.5rem;
+            margin: 1rem 0rem 0rem;
+        }
     }
 
     &__about {
@@ -36,11 +51,18 @@
         justify-content: space-between;
 
         @include mobile {
-            margin-left: 20px;
+            margin: 0px 20px;
+            border-bottom: 2px solid #e1e1e1;
         }
 
         @include tablet {
             border-bottom: 1px solid #E1E1E1;
+            margin: 0rem 2.2rem;
+            font-size: 0.8rem;
+        }
+
+        @include desktop {
+            margin: 0rem 0rem 0rem 2.2rem;
         }
     }
 
@@ -55,10 +77,12 @@
 
         @include tablet {
             flex-direction: row;
+            justify-content: space-between;
+            width: 30%;
         }
 
         @include desktop {
-            margin-left: 125px;
+            // margin-left: 125px;
         }
     }
 
@@ -66,21 +90,42 @@
         display: inline-flex;
         justify-content: space-between;
 
+        @include mobile {
+            margin: 0rem;
+            padding-bottom: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
     }
 
     &__views {
         display: inline-flex;
         justify-content: flex-start;
-        width: 30%;
+        width: 30%; //try commenting
 
         @include mobile {
             flex-direction: column;
+            width: 70%;
+            margin-top: 1rem;
         }
 
         @include tablet {
             flex-direction: row;
             margin-right: 2rem;
         }
+
+        @include desktop {
+            width: 31%;
+        }
+    }
+
+    &__views-wrapper{
+        @include mobile {
+            display: inline-flex;
+            flex-direction: row;
+            margin-bottom: 1rem;
+    }
+
     }
 
     &__icons {
@@ -97,13 +142,28 @@
         justify-content: flex-start;
 
         @include mobile {
-            margin-left: 20px;
+            margin: 1rem 1rem 0rem 1rem;
+            font-size: 0.78rem;
         }
 
         @include tablet {
-            margin-left: 175px;
+            margin-left: 2.2rem;
             margin-right: 1rem;
+            font-size: 0.9rem;
         }
     }
 
+    &__comments-count {
+      display: flex;
+      width: 100%;
+
+      @include mobile {
+        font-size: 0.82rem;
+        margin: 1rem 1rem 0rem 1rem;
+      }
+
+      @include tablet {
+        margin-left: 2.2rem;
+      }
+    }
 }

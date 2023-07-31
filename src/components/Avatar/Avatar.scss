@@ -22,10 +22,13 @@
 
             @include tablet {
                 display: flex;
+                margin-left: 1.5rem;
             }
         }
 
         &--alternate-header {
+
+            margin-left: 0.6rem;
 
             @include mobile {
                 display: inline-flex;

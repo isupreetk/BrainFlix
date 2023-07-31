@@ -7,8 +7,8 @@ import Form from "./components/Form/Form";
 import Comment from "./components/Comment/Comment";
 import VideoList from "./components/VideoList/VideoList";
 
-import videoDetailsJSON from "./assets/data/video-details.json";
-import videosJSON from "./assets/data/videos.json";
+import videoDetailsJSON from "./data/video-details.json";
+import videosJSON from "./data/videos.json";
 
 function App() {
 
@@ -22,10 +22,10 @@ function App() {
     setSelectedVideoDetail(newVideoSelection);
   }
 
-  function formatDateDDMMYYYY(date) {
-    let formattedDate = new Date(date).toLocaleDateString();
-    return formattedDate;
-  }
+  // function formatDateDDMMYYYY(date) {
+  //   let formattedDate = new Date(date).toLocaleDateString();
+  //   return formattedDate;
+  // }
 
   function dynamicTimestamp(commentDate) {
     let currentTimestamp = new Date();
@@ -102,7 +102,7 @@ function App() {
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
-          <SelectedVideo selectedVideoDetail={selectedVideoDetail} formatDateDDMMYYYY={formatDateDDMMYYYY} />
+          <SelectedVideo selectedVideoDetail={selectedVideoDetail} dynamicTimestamp={dynamicTimestamp} />
           <Form />
           <Comment selectedVideoDetail={selectedVideoDetail} dynamicTimestamp={dynamicTimestamp} />
         </div>

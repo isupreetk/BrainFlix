@@ -1,17 +1,39 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
 .next-video {
 
+    &__wrapper {
+        padding-left: 1rem;
+    }
+
+    &__item {
     list-style-type: none;
+    }
 
     &__heading {
         color: #AFAFAF;
-        margin-left: 1rem;
-    }
+        margin: 1rem;
 
+        @include mobile {
+            font-size: 0.795rem;
+        }
+
+        @include tablet {
+            font-size: 0.9rem;
+        }
+    }
+    
     &__container {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin-bottom: 10px;
+
+        @include mobile {
+            margin-bottom: 0.5rem;
+        }
     }
 
     // &__image-container {
@@ -20,12 +42,28 @@
 
     &__image {
         height: 70px;
-        width: 110px;
+        // width: 110px;
+        // height: 65px;
+        width: 105px;
         border-radius: 4px;
         background-color: #E1E1E1;
     }
 
     &__detail {
         margin-left: 10px;
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 700;
+
+        @include mobile {
+            margin: 0rem 0.5rem 0rem 0rem;        
+        }
+
+        @include tablet {
+            width: 62%;
+        }
     }
 }
