@@ -19,7 +19,7 @@ function VideoList({videos, selectedVideoDetail, handleVideoSelection}) {
                         }} key={video.id}>
                             <div className="next-video__container" >
                                 <div className="next-video__image-container">
-                                    <img src={video.image} alt="" className="next-video__image"/>
+                                    <img src={video.image} alt={video.title} className="next-video__image"/>
                                 </div>
                                 <div className="next-video__detail">
                                     <p className="next-video__title">{video.title}</p>

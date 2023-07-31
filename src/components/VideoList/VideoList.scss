@@ -4,6 +4,8 @@
 
 .next-video {
 
+    width: 100%;
+
     &__wrapper {
         padding-left: 1rem;
     }
@@ -29,10 +31,13 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 0.625rem;
 
         @include mobile {
             margin-bottom: 0.5rem;
+        }
+
+        @include tablet {
+            // margin-bottom: 0.625rem;
         }
     }
 

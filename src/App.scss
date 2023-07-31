@@ -11,6 +11,7 @@ font-size: 0.78rem;
 font-family: "AvenirNext LT Pro", "Sans Serif";
 box-sizing: border-box;
 margin: 0rem;
+width: 100%;
 }
 
 .sidebar-container {
@@ -54,7 +55,7 @@ margin: 0rem;
 
         @include tablet {
             width: 100%;
-            margin-left: 1.8rem;
+            // margin-left: 1.8rem;
         }
 
         @include desktop {

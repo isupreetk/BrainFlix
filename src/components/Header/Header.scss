@@ -22,6 +22,7 @@
         @include tablet {
             flex-direction: row;
             height: 4.6875rem;
+            width: 100%;
         }
 
         @include desktop {
@@ -55,7 +56,8 @@
 
             @include tablet { 
                 margin: 0rem;
-                margin-left: -5rem;
+                // margin-left: -5rem;
+                margin-left: -10rem;
             }
 
             @include desktop {
@@ -65,6 +67,10 @@
 
         &--right {
             justify-content: center;
+
+            @include tablet {
+                width: 35%;
+            }
         }
     }
 
@@ -151,6 +157,7 @@
         align-items: center;
         width: 6.25rem;
         padding: 0rem 1.25rem 0rem 2rem;
+        font-weight: 700;
 
         @include tablet {
             padding: 0rem 0rem 0rem 1.25rem;

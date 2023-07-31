@@ -25,13 +25,9 @@ function Header() {
 
                         </div>
                         <div className="header__upload-wrapper">
-                            <img className="header__upload-image" src={UploadBtn} />
+                            <img className="header__upload-image" src={UploadBtn} alt="upload icon" />
                             <span className="header__upload-text">UPLOAD</span>
                         </div>
-
-                        {/* <div className="header__login-wrapper">
-                            <img className="header__login-image" src={LoginImage} />
-                        </div> */}
 
                         <Avatar src={LoginImage} className="avatar__image avatar__image--header" />
 

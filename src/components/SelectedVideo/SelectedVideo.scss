@@ -77,6 +77,11 @@
     &__artist-date {
         display: inline-flex;
         justify-content: space-between;
+        font-weight: 400;
+
+        &--bold {
+            font-weight: 700;
+        }
 
         @include mobile {
             margin: 0rem;
@@ -143,11 +148,14 @@
 
     &__comments-count {
       display: flex;
-      width: 100%;
+    //   width: 100%;
 
       @include mobile {
         font-size: 0.82rem;
-        margin: 1rem 1rem 0rem 1rem;
+        // margin-left: 1rem;
+        padding-left: 1rem;
+        // margin: 1rem 0rem 0rem 1rem;
+        // display: none;
       }
 
       @include tablet {

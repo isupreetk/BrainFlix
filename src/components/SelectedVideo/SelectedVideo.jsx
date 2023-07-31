@@ -13,7 +13,7 @@ function Video({selectedVideoDetail, dynamicTimestamp}) {
                     </div>
                     <div className="video-section__about">
                         <div className="video-section__detail">
-                            <h4 className="video-section__artist-date">By {selectedVideoDetail.channel}</h4>
+                            <h4 className="video-section__artist-date video-section__artist-date--bold">By {selectedVideoDetail.channel}</h4>
                             <h4 className="video-section__artist-date">{dynamicTimestamp(selectedVideoDetail.timestamp)}</h4>
                         </div>
                         <div className="video-section__views">
