@@ -7,12 +7,12 @@
     flex-direction: column;
 
     @include mobile {
-        margin-left: 20px;
+        margin-left: 1.25rem;
         border-bottom: 2px solid #e1e1e1;
     }
 
     @include tablet {
-        // margin-left: 20px;
+        // margin-left: 1.25rem;
         margin: 0rem 2rem;
         border-bottom: 2px solid #e1e1e1;
         font-size: 0.9rem;
@@ -20,7 +20,7 @@
 
     @include desktop {
         margin-left: 2.2rem;
-        margin-bottom: 50px;
+        margin-bottom: 3.125rem;
         border-bottom: 0px;
 
     }
@@ -28,22 +28,9 @@
     &__container {
         display: flex;
         padding-bottom: 1rem;
-        border-top: 1px solid #e1e1e1;
+        border-top: 2px solid #e1e1e1;
     }
 
-    // &__image-div {
-    //     display: inline-flex;
-    //     align-items: center;
-    //     margin-right: 2rem;
-    // }
-
-    // &__image {
-    //     border-radius: 50%;
-    //     height: 2.5rem;
-    //     width: 2.5rem;
-    //     background-color: #E1E1E1;
-    // }
-    
     &__content-div {
         display: inline-flex;
         flex-direction: column;

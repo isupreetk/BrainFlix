@@ -14,11 +14,11 @@
         content: url("https://project-2-api.herokuapp.com/stream");
 
         @include mobile {
-            height: 175px;
+            height: 10.9375rem;
         }
 
         @include tablet {
-            height: 450px;
+            height: 28.125rem;
         }
     }
 

@@ -6,8 +6,6 @@
 
 .header {
     display: flex;
-    border: 1px solid black;
-    // margin: 0px;
 
     &__container {
         display: flex;
@@ -23,11 +21,11 @@
 
         @include tablet {
             flex-direction: row;
-            height: 75px;
+            height: 4.6875rem;
         }
 
         @include desktop {
-            height: 100px;
+            height: 6.25rem;
         }
     }
 
@@ -61,17 +59,12 @@
             }
 
             @include desktop {
-            // width: 40%;
-            margin-right: 380px;
+            margin-right: 23.75rem;
             }
         }
 
         &--right {
             justify-content: center;
-
-            @include desktop {
-            // width: 60%;
-            }
         }
     }
 
@@ -90,8 +83,8 @@
     }
 
     &__logo {
-        height: 25px;
-        width: 120px;
+        height: 1.5625rem;
+        width: 20rem;
     }
 
     &__search-wrapper {
@@ -108,9 +101,9 @@
 
     &__search-bar {
         background: url("../../assets/icons/search.svg") no-repeat scroll 8px 10px;
-        padding-left: 35px;
-        height: 35px;
-        width: 200px;
+        padding-left: 2.1875rem;
+        height: 2.1875rem;
+        width: 12.5rem;
         border-radius: 6px;
         border: 2px solid #E1E1E1;
         background-color: #FAFAFA;
@@ -125,7 +118,7 @@
         justify-content: space-evenly;
         align-items: center;
         background-color: #0095FF;
-        height: 40px;
+        height: 2.5rem;
         border-radius: 4px;
 
         @include mobile {
@@ -136,8 +129,7 @@
         }
 
         @include tablet {
-        display: inline-flex;
-
+            display: inline-flex;
         }
 
         &:hover {
@@ -146,35 +138,23 @@
     }
 
     &__upload-image {
-        // background-color: #0095FF;
-        padding-left: 10px;
+        padding-left: 0.625rem;
 
         @include mobile {
-            margin-left: -35px;
-            padding-left: 0px;
+            margin-left: -2.1875rem;
+            padding-left: 0rem;
         }
     }
 
     &__upload-text {
         color: white;
         align-items: center;
-        width: 100px;
-        padding: 0px 20px 0px 32px;
+        width: 6.25rem;
+        padding: 0rem 1.25rem 0rem 2rem;
 
         @include tablet {
-            padding: 0px 0px 0px 20px;
+            padding: 0rem 0rem 0rem 1.25rem;
         }
 
     }
-
-    // &__login-wrapper {
-    //     display: inline-flex;
-    // }
-
-    // &__login-image {
-    //     border-radius: 50%;
-    //     height: 2.5rem;
-    //     width: 2.5rem;
-    //     margin-left: 3rem;
-    // }
 }

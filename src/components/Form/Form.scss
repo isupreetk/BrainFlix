@@ -8,7 +8,7 @@
     margin-bottom: 1rem;
 
     @include mobile {
-      margin-left: 20px;
+      margin-left: 1.25rem;
     }
   
     @include tablet {
@@ -22,21 +22,7 @@
       @include tablet {
         padding-bottom: 1rem;
       }
-      // border-bottom: 1px solid #e1e1e1;
     }
-  
-    // &__image {
-    //   display: inline-flex;
-    //   align-items: center;
-    //   margin-top: auto;
-    // }
-  
-    // &__login-image {
-    //   border-radius: 50%;
-    //   height: 2.5rem;
-    //   width: 2.5rem;
-    //   margin-left: 0rem;
-    // }
   
     &__content {
       display: inline-flex;
@@ -44,11 +30,11 @@
       width: 70%;
 
       @include mobile {
-        margin-left: 25px;
+        margin-left: 1.5625rem;
       }
 
       @include tablet {
-        margin-left: 35px;
+        margin-left: 2.1875rem;
       }
     }
   
@@ -67,7 +53,6 @@
 
       @include mobile {
         flex-direction: column;
-        // justify-content: center;
       }
 
       @include tablet {
@@ -103,7 +88,7 @@
       align-items: center;
       background-color: #0095FF;
       margin-left: 0.5rem;
-      height: 40px;
+      height: 2.5rem;
       border-radius: 4px;
 
       @include mobile {
@@ -117,8 +102,7 @@
     }
   
     &__comment-icon {
-      // background-color: #0095FF;
-      padding-left: 10px;
+      padding-left: 0.625rem;
 
       @include mobile {
         padding: 0rem;
@@ -128,8 +112,8 @@
     &__comment-text {
       color: white;
       align-items: center;
-      width: 100px;
-      padding: 0px 20px 0px 32px;
+      width: 6.25rem;
+      padding: 0rem 1.25rem 0rem 2rem;
     }
   
   }
