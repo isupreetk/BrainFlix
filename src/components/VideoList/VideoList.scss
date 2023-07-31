@@ -35,10 +35,6 @@
         @include mobile {
             margin-bottom: 0.5rem;
         }
-
-        @include tablet {
-            // margin-bottom: 0.625rem;
-        }
     }
 
     &__image {

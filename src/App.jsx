@@ -22,11 +22,6 @@ function App() {
     setSelectedVideoDetail(newVideoSelection);
   }
 
-  // function formatDateDDMMYYYY(date) {
-  //   let formattedDate = new Date(date).toLocaleDateString();
-  //   return formattedDate;
-  // }
-
   function dynamicTimestamp(commentDate) {
     let currentTimestamp = new Date();
     let commentTimestamp = commentDate;

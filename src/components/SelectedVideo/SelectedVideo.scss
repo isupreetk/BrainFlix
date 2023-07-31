@@ -94,7 +94,7 @@
     &__views {
         display: inline-flex;
         justify-content: flex-start;
-        width: 30%; //try commenting
+        width: 30%; 
 
         @include mobile {
             flex-direction: column;
@@ -148,14 +148,10 @@
 
     &__comments-count {
       display: flex;
-    //   width: 100%;
 
       @include mobile {
         font-size: 0.82rem;
-        // margin-left: 1rem;
         padding-left: 1rem;
-        // margin: 1rem 0rem 0rem 1rem;
-        // display: none;
       }
 
       @include tablet {
