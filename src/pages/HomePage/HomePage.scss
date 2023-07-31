@@ -1,0 +1,65 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    color: #323232;
+    font-size: 0.78rem;
+    font-family: "AvenirNext LT Pro", "Sans Serif";
+    box-sizing: border-box;
+    margin: 0rem;
+    width: 100%;
+}
+
+.sidebar-container {
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include desktop {
+    display: inline-flex;
+    flex-direction: row;
+}
+}
+
+.sidebar {
+
+    &--left {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+        width: 100%;
+    }
+
+    @include desktop {
+        width: 60%;
+    }
+    }
+
+    &--right {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        @include desktop {
+        width: 40%;
+        border-left: 2px solid #e1e1e1;
+        margin-left: 0rem;
+        }
+    }
+}
