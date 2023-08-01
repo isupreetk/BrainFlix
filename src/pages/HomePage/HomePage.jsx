@@ -1,6 +1,6 @@
 import "./HomePage.scss";
+
 import { useState } from "react";
-import Header from "../../components/Header/Header";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import SelectedVideo from "../../components/SelectedVideo/SelectedVideo";
 import Form from "../../components/Form/Form";
@@ -93,7 +93,6 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      <Header />
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
