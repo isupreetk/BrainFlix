@@ -10,8 +10,6 @@ import Form from "../../components/Form/Form";
 import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
 
-import videoDetailsJSON from "../../data/video-details.json";
-
 function HomePage() {
 
   const api_URL = "https://project-2-api.herokuapp.com/videos";
@@ -20,7 +18,7 @@ function HomePage() {
   const {id} = useParams();
 
   const [videos, setVideos] = useState([]);
-  const [selectedVideoDetail, setSelectedVideoDetail] = useState(videoDetailsJSON[0]);
+  const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   
   useEffect(() => {
     axios.get(`${api_URL}${api_key}`)
@@ -36,7 +34,6 @@ function HomePage() {
     if(id) {
     axios.get(`${api_URL}/${id}${api_key}`)
     .then((response) => {
-      // console.log("selected video", response);
       setSelectedVideoDetail(response.data);
     })
     .catch((error) => {
