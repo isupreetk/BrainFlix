@@ -1,3 +1,137 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
+
+.upload-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 90%;
+    }
+
+    &__heading {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__subheading {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+
+    &__image {
+
+        @include mobile {
+            height: 200px;
+            width: 100%;
+            // padding-right: 1rem;
+
+        }
+
+        @include tablet {
+            height: 4.375rem;
+            width: 6.5625rem;
+            border-radius: 4px;
+            background-color: #E1E1E1;
+    }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // align-items: flex-start;
+    }
+
+    &__form-input-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+        // margin-bottom: 1rem;
+    }
+
+    &__form-label {
+        font-size: 0.7rem;
+        color: #323232;
+        font-weight: 700;
+        // margin-bottom: 0.2rem;
+        margin-top: 1rem;
+    }
+
+    &__form-input {
+        width: 100%;
+    }
+
+    &__publish-wrapper {
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #0095FF;
+        height: 2.5rem;
+        border-radius: 4px;
+
+        @include mobile {
+            display: flex;
+            margin: 1rem;
+            width: 90%;
+        }
+
+        @include tablet {
+            display: inline-flex;
+        }
+
+        &:hover {
+            background-color: #0065AD;
+        }
+    }
+
+    &__publish-image {
+        // padding-left: 0.625rem;
+
+        @include mobile {
+            // margin-left: -2.1875rem;
+            margin-left: -9rem;
+            padding-left: 0rem;
+        }
+    }
+
+    &__publish-text {
+        color: white;
+        align-items: center;
+        width: 6.25rem;
+        padding: 0rem 1.25rem 0rem 2rem;
+        font-weight: 700;
+
+        @include tablet {
+            padding: 0rem 0rem 0rem 1.25rem;
+        }
+    }
+
+    &__cancel {
+        color: #0095FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 1rem 0rem 2rem 0rem;
+    }
+}

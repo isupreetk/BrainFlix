@@ -92,7 +92,7 @@ function HomePage() {
   }  
 
   return (
-    <div className="HomePage">
+    <div className="home-page">
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
