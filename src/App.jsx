@@ -9,8 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/:id" element={<HomePage />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

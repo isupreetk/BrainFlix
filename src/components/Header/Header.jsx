@@ -5,6 +5,8 @@ import BrainFlixLogo from "../../assets/logo/BrainFlix-logo.svg"
 import UploadBtn from "../../assets/icons/upload.svg"
 import LoginImage from "../../assets/images/Mohan-muruge.jpg"
 
+import { Link } from "react-router-dom";
+
 function Header() {
     return (
         <>
@@ -12,7 +14,7 @@ function Header() {
                 <div className="header__container">
                     <div className="header__content header__content--left">
                         <div className="header__logo-wrapper">
-                            <img className="header__logo " src={BrainFlixLogo} />
+                            <Link to="/"><img className="header__logo " src={BrainFlixLogo} alt="logo" /></Link>
                         </div>
                     </div>
 
@@ -24,10 +26,14 @@ function Header() {
                             <Avatar src={LoginImage} className="avatar__image avatar__image--alternate-header" />
 
                         </div>
-                        <div className="header__upload-wrapper">
+                        <Link to="/upload">
+                            <div className="header__upload-wrapper">
+                            
                             <img className="header__upload-image" src={UploadBtn} alt="upload icon" />
                             <span className="header__upload-text">UPLOAD</span>
+                            
                         </div>
+                        </Link>
 
                         <Avatar src={LoginImage} className="avatar__image avatar__image--header" />
 

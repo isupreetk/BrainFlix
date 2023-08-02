@@ -14,14 +14,16 @@ function UploadPage() {
             </div>
             <form className="upload-page__form">
                 <div className="upload-page__form-container">
-                    <div className="upload-page__form-input-wrapper">
-                        <label htmlFor="videoTitle" className="upload-page__form-label">TITLE YOUR VIDEO</label>
-                        <input type="text" className="upload-page__form-input" name="videoTitle" id="videoTitle" placeholder="Add a title to your video"></input>
-                    </div>
+                    <div className="upload-page__form-input-container">
+                        <div className="upload-page__form-input-wrapper">
+                            <label htmlFor="videoTitle" className="upload-page__form-label">TITLE YOUR VIDEO</label>
+                            <input type="text" className="upload-page__form-input" name="videoTitle" id="videoTitle" placeholder="Add a title to your video"></input>
+                        </div>
 
-                    <div className="upload-page__form-input-wrapper">
-                        <label htmlFor="videoDescription" className="upload-page__form-label">ADD A VIDEO DESCRIPTION</label>
-                        <textarea className="upload-page__form-input" name="videoDescription" id="videoDescription" placeholder="Add a description to your video"></textarea>
+                        <div className="upload-page__form-input-wrapper">
+                            <label htmlFor="videoDescription" className="upload-page__form-label">ADD A VIDEO DESCRIPTION</label>
+                            <textarea className="upload-page__form-input" name="videoDescription" id="videoDescription" placeholder="Add a description to your video"></textarea>
+                        </div>
                     </div>
 
                     <div className="upload-page__publish-wrapper">

@@ -1,6 +1,9 @@
 import "./HomePage.scss";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import SelectedVideo from "../../components/SelectedVideo/SelectedVideo";
 import Form from "../../components/Form/Form";
@@ -8,19 +11,48 @@ import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
 
 import videoDetailsJSON from "../../data/video-details.json";
-import videosJSON from "../../data/videos.json";
 
 function HomePage() {
 
-  const [videos, setVideos] = useState(videosJSON);
-  const [videoDetails, setVideoDetails] = useState(videoDetailsJSON)
+  const api_URL = "https://project-2-api.herokuapp.com/videos";
+  const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
+  
+  const {id} = useParams();
 
+  const [videos, setVideos] = useState([]);
   const [selectedVideoDetail, setSelectedVideoDetail] = useState(videoDetailsJSON[0]);
+  
+  useEffect(() => {
+    axios.get(`${api_URL}${api_key}`)
+    .then((response) => {
+      setVideos(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  },[])
 
-  function handleVideoSelection(id) {
-    let newVideoSelection = videoDetails.find((video) => video.id === id)
-    setSelectedVideoDetail(newVideoSelection);
+  useEffect(() => {
+    if(id) {
+    axios.get(`${api_URL}/${id}${api_key}`)
+    .then((response) => {
+      // console.log("selected video", response);
+      setSelectedVideoDetail(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
+  else {
+    axios.get(`${api_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${api_key}`)
+    .then((response) => {
+      setSelectedVideoDetail(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+  },[id])
 
   function dynamicTimestamp(commentDate) {
     let currentTimestamp = new Date();
@@ -102,7 +134,7 @@ function HomePage() {
         </div>
 
         <div className="sidebar sidebar--right">
-          <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail} handleVideoSelection={handleVideoSelection} />
+          <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail}  />
         </div>
       </div>
     </div>

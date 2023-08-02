@@ -31,7 +31,7 @@ function Video({selectedVideoDetail, dynamicTimestamp}) {
                     </p>
                     </div>
                     <h3 className="video-section__comments-count">
-                    {selectedVideoDetail.comments.length} Comments
+                    {selectedVideoDetail.comments?.length} Comments
                     </h3>
                 </div> 
             </section>

@@ -8,7 +8,7 @@ function Comment({selectedVideoDetail, dynamicTimestamp}) {
         
         <div className="comments">
 
-            {selectedVideoDetail.comments.map((comment) => {
+            {selectedVideoDetail.comments?.map((comment) => {
                 return (
                     
                         <div className="comments__container" key={comment.id}>

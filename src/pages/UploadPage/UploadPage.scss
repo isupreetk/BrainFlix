@@ -20,11 +20,21 @@
     &__heading {
         display: flex;
         justify-content: flex-start;
+        width: 100%;
+
+        @include tablet {
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 1.5rem;
+        }
     }
 
     &__subheading {
         display: flex;
         justify-content: flex-start;
+
+        @include tablet {
+            margin: 0rem;
+        }
     }
 
 
@@ -38,8 +48,10 @@
         }
 
         @include tablet {
-            height: 4.375rem;
-            width: 6.5625rem;
+            // height: 4.375rem;
+            // width: 6.5625rem;
+            height: 11.375rem;
+            width: 21.5625rem;
             border-radius: 4px;
             background-color: #E1E1E1;
     }
@@ -55,10 +67,19 @@
 
     &__form-container {
         width: 100%;
+    }
+
+    &__form-input-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         // align-items: flex-start;
+
+        @include tablet {
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e1e1e1;
+        }
     }
 
     &__form-input-wrapper {
