@@ -14,7 +14,7 @@ function Header() {
                 <div className="header__container">
                     <div className="header__content header__content--left">
                         <div className="header__logo-wrapper">
-                            <Link to="/"><img className="header__logo " src={BrainFlixLogo} alt="logo" /></Link>
+                            <Link to="/videos"><img className="header__logo " src={BrainFlixLogo} alt="logo" /></Link>
                         </div>
                     </div>
 

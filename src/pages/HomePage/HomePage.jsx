@@ -10,13 +10,14 @@ import Form from "../../components/Form/Form";
 import Comment from "../../components/Comment/Comment";
 import VideoList from "../../components/VideoList/VideoList";
 
+
 function HomePage() {
 
   const api_URL = "https://project-2-api.herokuapp.com/videos";
   const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
   
   const {id} = useParams();
-
+    
   const [videos, setVideos] = useState([]);
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   
@@ -31,9 +32,11 @@ function HomePage() {
   },[])
 
   useEffect(() => {
+    
     if(id) {
     axios.get(`${api_URL}/${id}${api_key}`)
     .then((response) => {
+      // console.log("selected video", response);
       setSelectedVideoDetail(response.data);
     })
     .catch((error) => {
@@ -129,7 +132,6 @@ function HomePage() {
           <Form />
           <Comment selectedVideoDetail={selectedVideoDetail} dynamicTimestamp={dynamicTimestamp} />
         </div>
-
         <div className="sidebar sidebar--right">
           <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail}  />
         </div>
