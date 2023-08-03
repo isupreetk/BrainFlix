@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 import "./VideoList.scss";
 
-function VideoList({videos, selectedVideoDetail})
+function VideoList({upNextVideoList})
 {
-    // const {id} = useParams();
     
     return (
         <div className="next-video">
@@ -12,21 +10,18 @@ function VideoList({videos, selectedVideoDetail})
 
             <ul className="next-video__wrapper">
                 {
-                videos
-                .filter((video) => {
-                    return (video.id !== selectedVideoDetail.id);
-                })
-                .map((video) => {
+                upNextVideoList
+                .map((nextVideo) => {
                     return (
-                            <li className="next-video__item" key={video.id}>
-                            <Link to={`/videos/${video.id}`}>
+                            <li className="next-video__item" key={nextVideo.id}>
+                            <Link to={`/videos/${nextVideo.id}`}>
                             <div className="next-video__container" >
                                 <div className="next-video__image-container">
-                                    <img src={video.image} alt={video.title} className="next-video__image"/>
+                                    <img src={nextVideo.image} alt={nextVideo.title} className="next-video__image"/>
                                 </div>
                                 <div className="next-video__detail">
-                                    <p className="next-video__title">{video.title}</p>
-                                    <p className="next-video__channel">{video.channel}</p>
+                                    <p className="next-video__title">{nextVideo.title}</p>
+                                    <p className="next-video__channel">{nextVideo.channel}</p>
                                 </div>
                             </div>
                             </Link>

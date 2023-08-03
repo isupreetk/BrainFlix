@@ -1,11 +1,11 @@
 import Avatar from "../Avatar/Avatar";
 import "./Comment.scss";
+import { dynamicTimestamp } from "../../utils";
 
-function Comment({selectedVideoDetail, dynamicTimestamp}) {
+function Comment({selectedVideoDetail}) {
 
     return (
 
-        
         <div className="comments">
 
             {selectedVideoDetail.comments?.map((comment) => {

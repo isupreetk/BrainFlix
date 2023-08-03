@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import { dynamicTimestamp } from "../../utils";
+// import { dynamicTimestamp } from "../../utils";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
 import SelectedVideo from "../../components/SelectedVideo/SelectedVideo";
 import Form from "../../components/Form/Form";
@@ -15,49 +15,55 @@ function HomePage() {
 
   const api_URL = "https://project-2-api.herokuapp.com/videos";
   const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
-  
-  const {id} = useParams();
-    
+
+  const { id } = useParams();
+
   const [videos, setVideos] = useState([]);
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
-  
-  useEffect(() => {
-    axios.get(`${api_URL}${api_key}`)
-    .then((response) => {
-      setVideos(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  },[])
 
   useEffect(() => {
-    
-    if(id) {
-    axios.get(`${api_URL}/${id}${api_key}`)
-    .then((response) => {
-      // console.log("selected video", response);
-      setSelectedVideoDetail(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
-  else {
-    axios.get(`${api_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${api_key}`)
-    .then((response) => {
-      setSelectedVideoDetail(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
-  },[id])
+    axios.get(`${api_URL}${api_key}`)
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }, [])
+
+  useEffect(() => {
+
+    if (id) {
+      axios.get(`${api_URL}/${id}${api_key}`)
+        .then((response) => {
+          // console.log("selected video", response);
+          setSelectedVideoDetail(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+    else {
+      axios.get(`${api_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${api_key}`)
+        .then((response) => {
+          setSelectedVideoDetail(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+  }, [id])
+
+  let upNextVideoList = videos.filter((video) => {
+    return (video.id !== selectedVideoDetail.id);
+  })
+
+  // console.log(upNextVideoList);
 
   // function dynamicTimestamp(commentDate) {
   //   let currentTimestamp = new Date();
   //   let commentTimestamp = commentDate;
-  
+
   //   let diffMilliSeconds = Math.abs(currentTimestamp - commentTimestamp);
   //   let diffSeconds = Math.floor(diffMilliSeconds / 1000);
   //   let diffMinutes = Math.floor(diffSeconds / 60);
@@ -65,7 +71,7 @@ function HomePage() {
   //   let diffDays = Math.floor(diffHours / 24);
   //   let diffMonths = Math.floor(diffDays / 30);
   //   let diffYears = Math.floor(diffMonths / 12);
-  
+
   //   if (diffMinutes === 0) {
   //     let commentTimeMessage = "less than a minute ago";
   //     return commentTimeMessage;
@@ -128,12 +134,13 @@ function HomePage() {
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
-          <SelectedVideo selectedVideoDetail={selectedVideoDetail} dynamicTimestamp={dynamicTimestamp} />
+          <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
           <Form />
-          <Comment selectedVideoDetail={selectedVideoDetail} dynamicTimestamp={dynamicTimestamp} />
+          <Comment selectedVideoDetail={selectedVideoDetail} />
         </div>
         <div className="sidebar sidebar--right">
-          <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail}  />
+          {/* <VideoList videos={videos} selectedVideoDetail={selectedVideoDetail} /> */}
+          <VideoList upNextVideoList={upNextVideoList} />
         </div>
       </div>
     </div>

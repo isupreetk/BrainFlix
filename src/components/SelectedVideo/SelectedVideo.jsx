@@ -1,8 +1,9 @@
 import "./SelectedVideo.scss";
+import { dynamicTimestamp } from "../../utils";
 import ViewsIcon from "../../assets/icons/views.svg"
 import LikeIcon from "../../assets/icons/likes.svg"
 
-function Video({selectedVideoDetail, dynamicTimestamp}) {
+function Video({selectedVideoDetail}) {
 
     return (
        
