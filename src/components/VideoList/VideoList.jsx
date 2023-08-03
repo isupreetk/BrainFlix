@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./VideoList.scss";
+import { scrollToTop } from "../../utils";
 
 function VideoList({upNextVideoList})
-{
-    
+{   
     return (
         <div className="next-video">
             <h5 className="next-video__heading">NEXT VIDEOS</h5>
@@ -14,7 +14,7 @@ function VideoList({upNextVideoList})
                 .map((nextVideo) => {
                     return (
                             <li className="next-video__item" key={nextVideo.id}>
-                            <Link to={`/videos/${nextVideo.id}`}>
+                            <Link to={`/videos/${nextVideo.id}`} onClick={scrollToTop}>
                             <div className="next-video__container" >
                                 <div className="next-video__image-container">
                                     <img src={nextVideo.image} alt={nextVideo.title} className="next-video__image"/>

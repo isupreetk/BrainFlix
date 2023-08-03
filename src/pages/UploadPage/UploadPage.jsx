@@ -2,7 +2,14 @@ import "./UploadPage.scss";
 import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 
+import { Link } from "react-router-dom";
+
 function UploadPage() {
+
+    const handlePublishClick = () => {
+        alert("Thank you for uploading!");
+    }
+
     return (
         <div className="upload-page">
 
@@ -27,14 +34,16 @@ function UploadPage() {
                     </div>
 
                     <div className="upload-page__publish-wrapper">
+                        <Link to="/videos" onClick={handlePublishClick}>
                         <img className="upload-page__publish-image" src={PublishIcon} alt="publish icon" />
                         <span className="upload-page__publish-text">PUBLISH</span>
+                        </Link>
                     </div>
                 </div>
 
             </form>
 
-            <a className="upload-page__cancel" href="">CANCEL</a>
+            <Link to="/videos" className="upload-page__cancel" >CANCEL</Link>
 
         </div>
     );
