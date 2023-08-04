@@ -25,6 +25,10 @@ function HomePage() {
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   const [commentId, setCommentId] = useState("");
 
+  function handleAddCommentClick() {
+    console.log("Added comment");
+  }
+
   function handleDeleteClick(commentId) {
         axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
         .then((response) => {
@@ -91,7 +95,7 @@ function HomePage() {
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
           <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
-          <Form />
+          <Form handleAddCommentClick={handleAddCommentClick}/>
           <Comment selectedVideoDetail={selectedVideoDetail} handleDeleteClick={handleDeleteClick}/>
         </div>
         <div className="sidebar sidebar--right">
