@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function UploadPage() {
 
     const handlePublishClick = () => {
-        alert("Thank you for uploading!");
+        alert("Thank you for uploading this video!");
     }
 
     return (

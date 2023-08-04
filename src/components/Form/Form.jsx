@@ -4,7 +4,9 @@ import Avatar from "../Avatar/Avatar";
 import LoginImage from "../../assets/images/Mohan-muruge.jpg"
 import CommentIcon from "../../assets/icons/add_comment.svg"
 
-function Form() {
+
+
+function Form({formRef, handleAddCommentClick}) {
     return (
         <>
         <section className="form-section">
@@ -14,9 +16,9 @@ function Form() {
 
           <div className="form-section__content">
             <h5 className="form-section__subheading">JOIN THE CONVERSATION</h5>
-            <form className="form-section__form">
+            <form className="form-section__form" ref={formRef}>
               <textarea type="text" name="comment" className="form-section__input" id="comment" placeholder=" Add a new comment"></textarea>
-              <button className="form-section__comment-wrapper">
+              <button className="form-section__comment-wrapper" onClick={handleAddCommentClick}>
                 <img className="form-section__comment-icon" src={CommentIcon} alt="Comment Icon"/>
                 <span className="form-section__comment-text">COMMENT</span>
               </button>
