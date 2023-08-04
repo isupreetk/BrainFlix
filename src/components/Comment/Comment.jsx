@@ -7,6 +7,7 @@ import { dynamicTimestamp } from "../../utils";
 
 
 function Comment({selectedVideoDetail, handleDeleteClick}) {
+    
     const api_URL = "https://project-2-api.herokuapp.com/videos";
     const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
     
@@ -32,6 +33,7 @@ function Comment({selectedVideoDetail, handleDeleteClick}) {
                                     {comment.comment}
                                 </div>
                                 <button className="comments__delete-button" onClick={() => {handleDeleteClick(comment.id)}} >DELETE</button>
+                                
                                 
                             </div>
 

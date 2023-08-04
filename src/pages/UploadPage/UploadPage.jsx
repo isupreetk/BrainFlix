@@ -34,7 +34,7 @@ function UploadPage() {
                     </div>
 
                     <div className="upload-page__publish-wrapper">
-                        <Link to="/videos" onClick={handlePublishClick}>
+                        <Link to="/videos" className="upload-page__publish-link" onClick={handlePublishClick}>
                         <img className="upload-page__publish-image" src={PublishIcon} alt="publish icon" />
                         <span className="upload-page__publish-text">PUBLISH</span>
                         </Link>

@@ -3,7 +3,7 @@ import "./HomePage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 // import { dynamicTimestamp } from "../../utils";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
@@ -17,33 +17,13 @@ function HomePage() {
   const api_URL = "https://project-2-api.herokuapp.com/videos";
   const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
 
-  const formRef = useRef();
+  // const formRef = useRef();
 
   const { id } = useParams();
 
   const [videos, setVideos] = useState([]);
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   const [commentId, setCommentId] = useState("");
-
-  function handleAddCommentClick() {
-
-    const form = formRef.current;
-    const newComment = form.comment.value;
-    // console.log("New Comment: ", newComment);
-
-
-    // axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`)
-    // ,{
-    //   name: "Supreet", comment: form.comment.value
-    // }
-    // .then((response) => {
-    //   console.log("comment added", response.data);
-    //   getSelectedVideo();
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // })
-  }
 
   function handleDeleteClick(commentId) {
         axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
@@ -95,9 +75,9 @@ function HomePage() {
       getSelectedVideo()
   }, [id])
 
-  useEffect(() => {
-    handleAddCommentClick()
-  },[selectedVideoDetail.comments])
+  // useEffect(() => {
+  //   handleAddCommentClick()
+  // },[selectedVideoDetail.comments])
 
   // useEffect (() => {handleDeleteClick(selectedVideoDetail.comments?.id)},[selectedVideoDetail.comments]);
 
@@ -111,7 +91,7 @@ function HomePage() {
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
           <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
-          <Form formRef={formRef} handleAddCommentClick={handleAddCommentClick}/>
+          <Form />
           <Comment selectedVideoDetail={selectedVideoDetail} handleDeleteClick={handleDeleteClick}/>
         </div>
         <div className="sidebar sidebar--right">
