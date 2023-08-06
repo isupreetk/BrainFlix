@@ -15,7 +15,7 @@ function App() {
         <Route path="/videos/:id" element={<HomePage />} />
         {/* <Route path="/videos/:id/comments/:commentId" element={<HomePage />} /> */}
         <Route path="/upload" element={<UploadPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
     </BrowserRouter>
   );

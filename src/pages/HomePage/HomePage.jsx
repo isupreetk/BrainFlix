@@ -3,7 +3,7 @@ import "./HomePage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import { useRef } from "react";
+import { useRef } from "react";
 
 // import { dynamicTimestamp } from "../../utils";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
@@ -18,6 +18,9 @@ function HomePage() {
   const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
 
   // const formRef = useRef();
+  // const form = formRef.current;
+
+  // console.log(form.comment.value);
 
   const { id } = useParams();
 
@@ -25,8 +28,18 @@ function HomePage() {
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   const [commentId, setCommentId] = useState("");
 
-  function handleAddCommentClick() {
-    console.log("Added comment");
+  function handleAddCommentClick(event) {
+    axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`,{
+      name: "Supreet",
+      comment: "Added a new comment"
+    })
+    .then((response) => {
+      console.log(response.data);
+      getSelectedVideo();
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   function handleDeleteClick(commentId) {
@@ -96,6 +109,7 @@ function HomePage() {
         <div className="sidebar sidebar--left">
           <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
           <Form handleAddCommentClick={handleAddCommentClick}/>
+          {/* formRef={formRef} */}
           <Comment selectedVideoDetail={selectedVideoDetail} handleDeleteClick={handleDeleteClick}/>
         </div>
         <div className="sidebar sidebar--right">
