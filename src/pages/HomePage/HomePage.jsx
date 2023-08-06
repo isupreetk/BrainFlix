@@ -3,7 +3,6 @@ import "./HomePage.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useRef } from "react";
 
 // import { dynamicTimestamp } from "../../utils";
 import HeroVideo from "../../components/HeroVideo/HeroVideo";
@@ -17,11 +16,6 @@ function HomePage() {
   const api_URL = "https://project-2-api.herokuapp.com/videos";
   const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
 
-  // const formRef = useRef();
-  // const form = formRef.current;
-
-  // console.log(form.comment.value);
-
   const { id } = useParams();
 
   const [videos, setVideos] = useState([]);
@@ -29,12 +23,12 @@ function HomePage() {
   const [commentId, setCommentId] = useState("");
 
   function handleAddCommentClick(event) {
+    event.preventDefault();
     axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`,{
-      name: "Supreet",
-      comment: "Added a new comment"
+      name: "Supreet Kaur",
+      comment: event.target.comment.value,
     })
     .then((response) => {
-      console.log(response.data);
       getSelectedVideo();
     })
     .catch((error) => {
@@ -45,10 +39,8 @@ function HomePage() {
   function handleDeleteClick(commentId) {
         axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
         .then((response) => {
-          // console.log("comment deleted", response);
           setCommentId(response.data);
           getSelectedVideo();
-          // selectedVideoDetail.comment?.remove()
         })
         .catch((error) => {
           console.log(error);
@@ -59,7 +51,6 @@ function HomePage() {
     if (id) {
       axios.get(`${api_URL}/${id}${api_key}`)
         .then((response) => {
-          // console.log("selected video", response);
           setSelectedVideoDetail(response.data);
         })
         .catch((error) => {
