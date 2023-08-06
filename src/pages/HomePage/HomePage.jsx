@@ -25,11 +25,11 @@ function HomePage() {
   function handleAddCommentClick(event) {
     event.preventDefault();
     axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`,{
-      name: "Supreet Kaur",
+      name: "Mohan Muruge",
       comment: event.target.comment.value,
     })
     .then((response) => {
-      getSelectedVideo();
+      getSelectedVideo(selectedVideoDetail.id);
     })
     .catch((error) => {
       console.log(error);
@@ -40,38 +40,73 @@ function HomePage() {
         axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
         .then((response) => {
           setCommentId(response.data);
-          getSelectedVideo();
+          getSelectedVideo(selectedVideoDetail.id);
         })
         .catch((error) => {
           console.log(error);
         })
 }
 
-  function getSelectedVideo() {
-    if (id) {
-      axios.get(`${api_URL}/${id}${api_key}`)
+  function getSelectedVideo(videoId) {
+
+    // agar id mil rhi hai url selectedVideoDetail, toh search on basis of that id
+    // nhi mil rhi hai toh search default 1st element
+    // if 1st element is not Present,wait 
+// console.log("videos", videos);
+
+    // if(videos.length > 0 || id) {
+      // let videoId = id ? id : videos[0].id;
+      console.log(videoId);
+      axios.get(`${api_URL}/${videoId}${api_key}`)
         .then((response) => {
+          response.data.comments.sort((a,b) => {
+            return b.timestamp - a.timestamp
+          });
           setSelectedVideoDetail(response.data);
         })
         .catch((error) => {
           console.log(error);
         })
-    }
-    else {
-      axios.get(`${api_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${api_key}`)
-        .then((response) => {
-          setSelectedVideoDetail(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    }
+  // } else{
+    // return;
+  // }
+       
+
+    // if (id) { let id = id;
+    // }
+    // else {
+    //   id = "84e96018-4022-434e-80bf-000ce4cd12b8";
+    //   // videos[0].id
+    // }
+    
+    // if (id) {
+      
+    // else {
+    //   axios.get(`${api_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${api_key}`)
+    //     .then((response) => {
+    //       response.data.comments.sort((a,b) => {
+    //         return b.timestamp - a.timestamp
+    //       });
+         
+  //         setSelectedVideoDetail(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       })
+  //   }
+  // }
   }
 
   useEffect(() => {
     axios.get(`${api_URL}${api_key}`)
       .then((response) => {
+        // console.log(response.data);
+
         setVideos(response.data);
+        if(!id) {
+        getSelectedVideo(response.data[0].id)
+      }
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -80,7 +115,7 @@ function HomePage() {
 
   
   useEffect(() => {
-      getSelectedVideo()
+      getSelectedVideo(id)
   }, [id])
 
   // useEffect(() => {

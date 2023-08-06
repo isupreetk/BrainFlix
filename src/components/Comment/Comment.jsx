@@ -21,7 +21,6 @@ function Comment({selectedVideoDetail, handleDeleteClick}) {
                     
                         <div className="comments__container" key={comment.id}>
                             {/* <Link to={`/videos/${selectedVideoDetail.id}/comments/${comment.id}`}> */}
-
                             <Avatar src="" className="avatar__image avatar__image--comments"/>
 
                             <div className="comments__content-div">
