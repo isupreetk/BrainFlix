@@ -26,9 +26,9 @@
     }
 
     @include desktop {
-    display: inline-flex;
-    flex-direction: row;
-}
+        display: inline-flex;
+        flex-direction: row;
+    }
 }
 
 .sidebar {
@@ -39,12 +39,12 @@
         }
 
         @include tablet {
-        width: 100%;
-    }
+            width: 100%;
+        }
 
-    @include desktop {
-        width: 60%;
-    }
+        @include desktop {
+            width: 60%;
+        }
     }
 
     &--right {
@@ -54,12 +54,13 @@
 
         @include tablet {
             width: 100%;
+            margin-left: 1rem;
         }
 
         @include desktop {
-        width: 40%;
-        border-left: 2px solid #e1e1e1;
-        margin-left: 0rem;
+            width: 40%;
+            border-left: 2px solid #e1e1e1;
+            margin-left: 0rem;
         }
     }
 }

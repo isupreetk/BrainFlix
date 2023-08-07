@@ -11,7 +11,12 @@
     }
 
     &__item {
-    list-style-type: none;
+        list-style-type: none;
+    }
+
+    &__item-link {
+        text-decoration: none;
+        color: #323232;
     }
 
     &__heading {
@@ -26,7 +31,7 @@
             font-size: 0.9rem;
         }
     }
-    
+
     &__container {
         display: flex;
         align-items: center;
@@ -54,7 +59,7 @@
         font-weight: 700;
 
         @include mobile {
-            margin: 0rem 0.5rem 0rem 0rem;        
+            margin: 0rem 0.5rem 0rem 0rem;
         }
 
         @include tablet {

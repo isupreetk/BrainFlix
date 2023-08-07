@@ -1,9 +1,9 @@
 import "./Avatar.scss";
 
-function Avatar({className, src}) {
+function Avatar({ className, src }) {
     return (
         <div className="avatar__wrapper">
-             <img className={className} src={src} alt="avatar image" />
+            <img className={className} src={src} alt="avatar image" />
         </div>
     );
 }

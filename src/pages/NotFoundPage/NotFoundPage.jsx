@@ -1,5 +1,3 @@
-import "./NotFoundPage.scss";
-
 function NotFoundPage() {
   return (
     <div>

@@ -2,10 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
-
-
 .header {
     display: flex;
+    border-bottom: 2px solid #E1E1E1;
 
     &__container {
         display: flex;
@@ -16,7 +15,6 @@
             flex-direction: column;
             width: 100%;
             justify-content: center;
-
         }
 
         @include tablet {
@@ -37,15 +35,16 @@
 
         @include mobile {
             flex-direction: column;
+            align-items: flex-start;
         }
 
         @include tablet {
             flex-direction: row;
         }
-    
+
         &--alternate {
             flex-direction: row;
-            
+
             @include mobile {
                 margin-bottom: 1rem;
             }
@@ -54,13 +53,14 @@
         &--left {
             justify-content: flex-start;
 
-            @include tablet { 
+            @include tablet {
                 margin: 0rem;
                 margin-left: -10rem;
             }
 
             @include desktop {
-            margin-right: 23.75rem;
+                margin-right: 23.75rem;
+                width: 40%
             }
         }
 
@@ -94,7 +94,7 @@
 
     &__search-wrapper {
         display: inline-flex;
-        
+
         @include mobile {
             margin-left: 1rem;
         }
@@ -119,17 +119,23 @@
         }
     }
 
+    &__upload {
+        text-decoration: none;
+    }
+
     &__upload-wrapper {
         justify-content: space-evenly;
         align-items: center;
         background-color: #0095FF;
         height: 2.5rem;
         border-radius: 4px;
+        text-decoration: none;
 
         @include mobile {
             display: flex;
             margin: 0rem 1rem 1rem 1rem;
             width: 100%;
+            padding: 0rem 1rem 0rem 2rem;
         }
 
         @include tablet {

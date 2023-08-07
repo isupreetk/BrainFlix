@@ -3,80 +3,81 @@
 @use "../../styles/partials/fonts" as *;
 
 .form-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  @include mobile {
+    margin-left: 1.25rem;
+  }
+
+  @include tablet {
+    margin-left: 2.2rem;
+
+  }
+
+  &__container {
     display: flex;
+
+    @include tablet {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__content {
+    display: inline-flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    width: 100%;
 
     @include mobile {
-      margin-left: 1.25rem;
+      margin-left: 1.5625rem;
     }
-  
+
     @include tablet {
-      margin-left: 2.2rem;
+      margin-left: 2.1875rem;
+    }
+  }
 
+  &__subheading {
+    color: #AFAFAF;
+    margin-bottom: 0.3rem;
+
+    @include tablet {
+      font-size: 0.9rem;
     }
-  
-    &__container {
-      display: flex;
-      
-      @include tablet {
-        padding-bottom: 1rem;
-      }
-    }
-  
-    &__content {
-      display: inline-flex;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
       flex-direction: column;
-      width: 100%;
-
-      @include mobile {
-        margin-left: 1.5625rem;
-      }
-
-      @include tablet {
-        margin-left: 2.1875rem;
-      }
     }
-  
-    &__subheading {
-      color: #AFAFAF;
-      margin-bottom: 0.3rem;
 
-      @include tablet {
-        font-size: 0.9rem;
-      }
+    @include tablet {
+      flex-direction: row;
     }
-  
-    &__form {
-      display: flex;
-      align-items: center;
+  }
 
-      @include mobile {
-        flex-direction: column;
-      }
+  &__input {
 
-      @include tablet {
-        flex-direction: row;
-      }
+    border: 2px solid #E1E1E1;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+
+    @include mobile {
+      width: 91%;
+      height: 5rem;
     }
-  
-    &__input {
 
-      border: 2px solid #E1E1E1;
-      background-color: #FAFAFA;
+    @include tablet {
+      width: 60%;
+    }
 
-      @include mobile {
-        width: 91%;
-        height: 5rem;
-      }
-
-      @include tablet {
-        width: 60%;
-      }
-
-      &:focus {
-        border: 2px solid #0095FF;
-        outline: none;
+    &:focus {
+      border: 2px solid #0095FF;
+      outline: none;
     }
 
     &:invalid {
@@ -84,42 +85,42 @@
       outline: none;
     }
 
-    }
-
-    &__comment-wrapper {
-      display: inline-flex;
-      justify-content: space-evenly;
-      align-items: center;
-      background-color: #0095FF;
-      margin-left: 0.5rem;
-      height: 2.5rem;
-      border-radius: 4px;
-      border: 0px;
-
-      @include mobile {
-          width: 95%;
-          margin: 1rem 0rem 0rem;
-      }
-
-      &:hover {
-        background-color: #0065AD;
-      }
-    }
-  
-    &__comment-icon {
-      padding-left: 0.625rem;
-
-      @include mobile {
-        padding: 0rem;
-      }
-    }
-  
-    &__comment-text {
-      color: white;
-      align-items: center;
-      width: 6.25rem;
-      padding: 0rem 1.25rem 0rem 2rem;
-      font-weight: 700;
-    }
-  
   }
+
+  &__comment-wrapper {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0095FF;
+    margin-left: 0.5rem;
+    height: 2.5rem;
+    border-radius: 4px;
+    border: 0px;
+
+    @include mobile {
+      width: 95%;
+      margin: 1rem 0rem 0rem;
+    }
+
+    &:hover {
+      background-color: #0065AD;
+    }
+  }
+
+  &__comment-icon {
+    padding-left: 0.625rem;
+
+    @include mobile {
+      padding: 0rem;
+    }
+  }
+
+  &__comment-text {
+    color: white;
+    align-items: center;
+    width: 6.25rem;
+    padding: 0rem 1.25rem 0rem 2rem;
+    font-weight: 700;
+  }
+
+}

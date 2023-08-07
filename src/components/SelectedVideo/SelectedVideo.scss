@@ -27,7 +27,7 @@
 
     &__heading {
 
-        @include mobile{
+        @include mobile {
             font-size: 1.5rem;
         }
 
@@ -94,7 +94,7 @@
     &__views {
         display: inline-flex;
         justify-content: flex-start;
-        width: 30%; 
+        width: 30%;
 
         @include mobile {
             flex-direction: column;
@@ -112,12 +112,12 @@
         }
     }
 
-    &__views-wrapper{
+    &__views-wrapper {
         @include mobile {
             display: inline-flex;
             flex-direction: row;
             margin-bottom: 1rem;
-    }
+        }
 
     }
 
@@ -147,15 +147,15 @@
     }
 
     &__comments-count {
-      display: flex;
+        display: flex;
 
-      @include mobile {
-        font-size: 0.82rem;
-        padding-left: 1rem;
-      }
+        @include mobile {
+            font-size: 0.82rem;
+            padding-left: 1rem;
+        }
 
-      @include tablet {
-        margin-left: 2.2rem;
-      }
+        @include tablet {
+            margin-left: 2.2rem;
+        }
     }
 }

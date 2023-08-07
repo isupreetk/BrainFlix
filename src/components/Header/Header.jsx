@@ -26,13 +26,12 @@ function Header() {
                             <Avatar src={LoginImage} className="avatar__image avatar__image--alternate-header" />
 
                         </div>
-                        <Link to="/upload">
+
+                        <Link to="/upload" className="header__upload">
                             <div className="header__upload-wrapper">
-                            
-                            <img className="header__upload-image" src={UploadBtn} alt="upload icon" />
-                            <span className="header__upload-text">UPLOAD</span>
-                            
-                        </div>
+                                <img className="header__upload-image" src={UploadBtn} alt="upload icon" />
+                                <span className="header__upload-text">UPLOAD</span>
+                            </div>
                         </Link>
 
                         <Avatar src={LoginImage} className="avatar__image avatar__image--header" />

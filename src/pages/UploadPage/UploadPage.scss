@@ -9,7 +9,7 @@
     align-items: center;
     width: 100%;
 
-    &__content {
+    &__title {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -31,16 +31,41 @@
     &__subheading {
         display: flex;
         justify-content: flex-start;
+        color: #AFAFAF;
 
         @include tablet {
             margin: 0rem;
         }
     }
 
+    &__video-details {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 5rem;
+            width: 100%;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e1e1e1;
+        }
+    }
 
     &__image {
 
         @include mobile {
+            display: flex;
             height: 200px;
             width: 100%;
         }
@@ -50,7 +75,11 @@
             width: 21.5625rem;
             border-radius: 4px;
             background-color: #E1E1E1;
-    }
+        }
+
+        @include desktop {
+            margin-left: 1.5rem;
+        }
     }
 
     &__form {
@@ -58,11 +87,31 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 90%;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        @include desktop {
+            margin-left: 2rem;
+            width: 60%;
+        }
     }
 
     &__form-container {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @include mobile {
+            align-items: center;
+        }
+
+        @include tablet {
+            align-items: flex-end;
+        }
     }
 
     &__form-input-container {
@@ -75,13 +124,17 @@
             padding-bottom: 1rem;
             border-bottom: 2px solid #e1e1e1;
         }
+
+        @include desktop {
+            border-bottom: 0px;
+        }
     }
 
     &__form-input-wrapper {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 90%;
+        width: 100%;
     }
 
     &__form-label {
@@ -89,11 +142,49 @@
         color: #323232;
         font-weight: 700;
         margin-top: 1rem;
+        color: #AFAFAF;
+        margin-bottom: 0.5rem;
     }
 
     &__form-input {
         width: 100%;
+        background-color: #FAFAFA;
+        border-radius: 6px;
+        border: 2px solid #E1E1E1;
+
+        &--textarea {
+            @include mobile {
+                height: 5rem;
+            }
+
+            @include tablet {
+                height: 4rem;
+            }
+
+            @include desktop {
+                height: 5rem;
+            }
+        }
     }
+
+    &__links {
+        display: flex;
+
+        @include mobile {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row-reverse;
+            width: 100%;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
 
     &__publish-wrapper {
         justify-content: space-evenly;
@@ -104,12 +195,22 @@
 
         @include mobile {
             display: flex;
-            margin: 1rem;
+            margin-top: 1rem;
+            margin-left: 1.3rem;
             width: 90%;
+            justify-content: center;
         }
 
         @include tablet {
             display: inline-flex;
+            width: 20%;
+            justify-content: flex-end;
+            margin: 1rem 2rem 1rem 1rem;
+        }
+
+        @include desktop {
+            width: 13%;
+            margin: 1rem 4rem 1rem 1rem;
         }
 
         &:hover {
@@ -118,27 +219,37 @@
     }
 
     &__publish-link {
+        display: flex;
         text-decoration: none;
+
+        @include tablet {
+            padding-left: 0.5rem;
+        }
     }
 
     &__publish-image {
-        // padding-left: 0.625rem;
+        display: inline-flex;
+        align-items: flex-start;
+        justify-content: center;
 
         @include mobile {
-            margin-left: -9rem;
+            margin-left: -6rem;
             padding-left: 0rem;
         }
     }
 
     &__publish-text {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
         color: white;
         align-items: center;
         width: 6.25rem;
-        padding: 0rem 1.25rem 0rem 2rem;
+        padding: 0rem 0.25rem 0rem 2rem;
         font-weight: 700;
 
         @include tablet {
-            padding: 0rem 0rem 0rem 1.25rem;
+            padding: 0rem 1.5rem 0rem 0rem;
         }
     }
 
@@ -149,6 +260,11 @@
         align-items: center;
         font-weight: 700;
         text-decoration: none;
-        margin: 1rem 0rem 2rem 0rem;
+        margin: 1.8rem 4rem 2rem 0rem;
+
+        @include mobile {
+            margin: 1.8rem 4rem 2rem 4rem;
+            width: 53%;
+        }
     }
 }

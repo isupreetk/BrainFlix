@@ -5,7 +5,7 @@
 .avatar {
 
     &__wrapper {
-    display: inline-flex;
+        display: inline-flex;
     }
 
     &__image {
@@ -48,6 +48,5 @@
             margin-top: 1rem;
             margin-right: 1rem;
         }
-        }
     }
-
+}
