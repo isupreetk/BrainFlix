@@ -26,8 +26,20 @@ function HomePage() {
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
   const [commentId, setCommentId] = useState("");
 
+  function formValidation() {
+    let valid = true;
+    if (!form.comment.value) {
+      valid = false;
+    }
+    return valid;
+  }
+
   function handleAddCommentClick(event) {
     event.preventDefault();
+    
+    let isValid = formValidation();
+
+    if(isValid) {
     axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`, {
       name: "Mohan Muruge",
       comment: event.target.comment.value,
@@ -38,9 +50,13 @@ function HomePage() {
       .catch((error) => {
         console.log(error);
       })
-
     form.reset();
-  }
+    }
+    else {
+      alert("Please enter your comment!");
+    }
+}
+
 
   function handleDeleteClick(commentId) {
     axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
@@ -81,7 +97,12 @@ function HomePage() {
 
 
   useEffect(() => {
-    getSelectedVideo(id)
+    if(id) {
+    getSelectedVideo(id);
+  }
+  else if (videos.length > 0){
+    getSelectedVideo(videos[0].id);
+  }
   }, [id])
 
   let upNextVideoList = videos.filter((video) => {
