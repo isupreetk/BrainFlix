@@ -5,10 +5,6 @@ import DefaultAvatar from "../../assets/icons/default-profile-picture.svg"
 
 function Comment({ selectedVideoDetail, handleDeleteClick }) {
 
-    const api_URL = "https://project-2-api.herokuapp.com/videos";
-    const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
-
-
     return (
 
         <div className="comments">
