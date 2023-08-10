@@ -13,8 +13,7 @@ import VideoList from "../../components/VideoList/VideoList";
 
 function HomePage() {
 
-  const api_URL = "https://project-2-api.herokuapp.com/videos";
-  const api_key = "?api_key=41a07f45-edd5-4710-950d-143b635e4bfc";
+  const api_URL = `${process.env.REACT_APP_API_SERVER}/videos`;
 
   const formRef = useRef();
 
@@ -40,7 +39,7 @@ function HomePage() {
     let isValid = formValidation();
 
     if(isValid) {
-    axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/${api_key}`, {
+    axios.post(`${api_URL}/${selectedVideoDetail.id}/comments/`, {
       name: "Mohan Muruge",
       comment: event.target.comment.value,
     })
@@ -59,7 +58,7 @@ function HomePage() {
 
 
   function handleDeleteClick(commentId) {
-    axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/${api_key}`)
+    axios.delete(`${api_URL}/${selectedVideoDetail.id}/comments/${commentId}/`)
       .then((response) => {
         setCommentId(response.data);
         getSelectedVideo(selectedVideoDetail.id);
@@ -70,7 +69,7 @@ function HomePage() {
   }
 
   function getSelectedVideo(videoId) {
-    axios.get(`${api_URL}/${videoId}${api_key}`)
+    axios.get(`${api_URL}/${videoId}`)
       .then((response) => {
         response.data.comments.sort((a, b) => {
           return b.timestamp - a.timestamp
@@ -83,7 +82,7 @@ function HomePage() {
   }
 
   useEffect(() => {
-    axios.get(`${api_URL}${api_key}`)
+    axios.get(`${api_URL}`)
       .then((response) => {
         setVideos(response.data);
         if (!id) {

@@ -9,7 +9,7 @@ function UploadPage() {
     const handlePublishClick = () => {
         alert("Thank you for uploading this video!");
     }
-
+    
     return (
         <div className="upload-page">
 
@@ -45,7 +45,7 @@ function UploadPage() {
                     </Link>
                 </div>
 
-                <Link to="/videos" className="upload-page__cancel" >CANCEL</Link>
+                <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
             </div>
 
         </div>
