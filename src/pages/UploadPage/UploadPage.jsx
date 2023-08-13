@@ -61,9 +61,12 @@ function UploadPage() {
             </div>
 
             <div className="upload-page__video-details">
-                <img className="upload-page__image" src={VideoThumbnail} alt="Video Thumbnail" />
 
                 <form className="upload-page__form" ref={uploadFormRef} onSubmit={handlePublishClick} >
+                    <div className="upload-page__form-section">
+                        
+                    <img className="upload-page__image" src={VideoThumbnail} alt="Video Thumbnail" />
+
                     <div className="upload-page__form-container">
                         <div className="upload-page__form-input-container">
                             <div className="upload-page__form-input-wrapper">
@@ -80,14 +83,18 @@ function UploadPage() {
                         </div>
                     </div>
 
+                    </div>
+
                     <div className="upload-page__links">
                         <button className="upload-page__publish-wrapper">
                             <img className="upload-page__publish-image" src={PublishIcon} alt="publish icon" />
                             <span className="upload-page__publish-text">PUBLISH</span>
                         </button>
+
+                    <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
+
                     </div>
                 </form>
-                <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
             </div>
 
         </div>
