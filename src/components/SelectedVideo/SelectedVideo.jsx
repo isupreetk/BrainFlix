@@ -31,11 +31,16 @@ function Video({ selectedVideoDetail, handleLikeClick }) {
                         {selectedVideoDetail.description}
                     </p>
                 </div>
+
+                <div className="video-section__count-like">
                 <h3 className="video-section__comments-count">
                     {selectedVideoDetail.comments?.length} Comments
                 </h3>
-
-                <button onClick={handleLikeClick} className="video-section__like-button">LIKE</button>
+ 
+                <div className="video-section__like">
+                    <button onClick={handleLikeClick} className="video-section__like-button">LIKE</button>
+                </div>
+                </div>
             </div>
         </section>
     );
