@@ -2,7 +2,7 @@ import "./UploadPage.scss";
 import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import axios from "axios";
 
@@ -13,6 +13,8 @@ function UploadPage() {
     const [videos, setVideos] = useState([]);
 
     const uploadFormRef = useRef();
+
+    const navigate = useNavigate();
 
     let valid = true;
 
@@ -30,16 +32,15 @@ function UploadPage() {
 
         if (isValid) {
             axios.post(`${api_URL}/videos`,
-            // axios.post(`${api_URL}/upload/`,
                 {
                     videoTitle: uploadFormRef.current.videoTitle.value,
                     videoDescription: uploadFormRef.current.videoDescription.value,
                 })
 
                 .then((response) => {
-                    // console.log(response.data);
                     setVideos([...videos, response.data]);
                     alert("Thank you for uploading your video");
+                    navigate("/videos");
 
                 }).catch((error) => {
                     console.log(error);
@@ -49,7 +50,6 @@ function UploadPage() {
         else {
             alert("Please add your video details");
         }
-        // console.log(uploadFormRef.current);
     }
 
     return (
@@ -82,27 +82,13 @@ function UploadPage() {
 
                     <div className="upload-page__links">
                         <button className="upload-page__publish-wrapper">
-                            {/* <Link to="/videos" className="upload-page__publish-link" > */}
                             <img className="upload-page__publish-image" src={PublishIcon} alt="publish icon" />
                             <span className="upload-page__publish-text">PUBLISH</span>
-                            {/* </Link> */}
                         </button>
                     </div>
                 </form>
                 <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
             </div>
-
-            {/* <div className="upload-page__links">
-                <div className="upload-page__publish-wrapper">
-                    <Link to="/videos" className="upload-page__publish-link" >
-                    // onClick={handlePublishClick}
-                        <img className="upload-page__publish-image" src={PublishIcon} alt="publish icon" />
-                        <span className="upload-page__publish-text">PUBLISH</span>
-                    </Link>
-                </div>
-
-                <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
-            </div> */}
 
         </div>
     );
