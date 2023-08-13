@@ -8,6 +8,8 @@ import axios from "axios";
 
 function UploadPage() {
 
+    const api_URL = process.env.REACT_APP_API_SERVER;
+
     const [videos, setVideos] = useState([]);
 
     const uploadFormRef = useRef();
@@ -27,14 +29,15 @@ function UploadPage() {
         let isValid = uploadFormValidation();
 
         if (isValid) {
-            axios.post(`http://localhost:8080/upload/`,
+            axios.post(`${api_URL}/videos`,
+            // axios.post(`${api_URL}/upload/`,
                 {
                     videoTitle: uploadFormRef.current.videoTitle.value,
                     videoDescription: uploadFormRef.current.videoDescription.value,
                 })
 
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     setVideos([...videos, response.data]);
                     alert("Thank you for uploading your video");
 
