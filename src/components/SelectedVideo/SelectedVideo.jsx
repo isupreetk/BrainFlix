@@ -3,7 +3,7 @@ import { dynamicTimestamp } from "../../utils";
 import ViewsIcon from "../../assets/icons/views.svg"
 import LikeIcon from "../../assets/icons/likes.svg"
 
-function Video({ selectedVideoDetail }) {
+function Video({ selectedVideoDetail, handleLikeClick }) {
 
     return (
 
@@ -34,6 +34,8 @@ function Video({ selectedVideoDetail }) {
                 <h3 className="video-section__comments-count">
                     {selectedVideoDetail.comments?.length} Comments
                 </h3>
+
+                <button onClick={handleLikeClick} className="video-section__like-button">LIKE</button>
             </div>
         </section>
     );

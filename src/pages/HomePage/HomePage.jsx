@@ -68,6 +68,16 @@ function HomePage() {
       })
   }
 
+  function handleLikeClick() {
+    axios.put(`${api_URL}/${selectedVideoDetail.id}/likes/`)
+    .then((response) => {
+      getSelectedVideo(selectedVideoDetail.id);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   function getSelectedVideo(videoId) {
     axios.get(`${api_URL}/${videoId}`)
       .then((response) => {
@@ -113,7 +123,7 @@ function HomePage() {
       <HeroVideo selectedVideoDetail={selectedVideoDetail} />
       <div className="sidebar-container">
         <div className="sidebar sidebar--left">
-          <SelectedVideo selectedVideoDetail={selectedVideoDetail} />
+          <SelectedVideo selectedVideoDetail={selectedVideoDetail} handleLikeClick={handleLikeClick} />
           <Form handleAddCommentClick={handleAddCommentClick} formRef={formRef} />
           <Comment selectedVideoDetail={selectedVideoDetail} handleDeleteClick={handleDeleteClick} />
         </div>
