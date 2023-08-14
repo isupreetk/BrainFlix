@@ -1,5 +1,4 @@
 import "./UploadPage.scss";
-import VideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ function UploadPage() {
     const api_URL = process.env.REACT_APP_API_SERVER;
 
     const [videos, setVideos] = useState([]);
+    const [file, setFile] = useState();
 
     const uploadFormRef = useRef();
 
@@ -19,11 +19,12 @@ function UploadPage() {
     let valid = true;
 
     function uploadFormValidation() {
-        if (!uploadFormRef.current.videoTitle.value || !uploadFormRef.current.videoDescription.value) {
+        if (!file || !uploadFormRef.current.videoTitle.value || !uploadFormRef.current.videoDescription.value) {
             valid = false;
         }
         return valid;
     }
+
 
     const handlePublishClick = (event) => {
         event.preventDefault();
@@ -31,12 +32,21 @@ function UploadPage() {
         let isValid = uploadFormValidation();
 
         if (isValid) {
-            axios.post(`${api_URL}/videos`,
-                {
-                    videoTitle: uploadFormRef.current.videoTitle.value,
-                    videoDescription: uploadFormRef.current.videoDescription.value,
-                })
 
+            const formData = new FormData();
+            formData.append("videoTitle", uploadFormRef.current.videoTitle.value);
+            formData.append("videoDescription", uploadFormRef.current.videoDescription.value);
+            formData.append("videoImage", file.file);
+
+
+            const config = {
+                headers: {
+                    "content-type": "multipart/form-data"
+                }
+            };
+
+            axios.post(`${api_URL}/videos`,
+                formData, config)
                 .then((response) => {
                     setVideos([...videos, response.data]);
                     alert("Thank you for uploading your video");
@@ -52,6 +62,11 @@ function UploadPage() {
         }
     }
 
+    const handleFile = (event) => {
+        const file = event.target.files[0]
+        setFile({ file });
+    }
+
     return (
         <div className="upload-page">
 
@@ -64,24 +79,23 @@ function UploadPage() {
 
                 <form className="upload-page__form" ref={uploadFormRef} onSubmit={handlePublishClick} >
                     <div className="upload-page__form-section">
-                        
-                    <img className="upload-page__image" src={VideoThumbnail} alt="Video Thumbnail" />
 
-                    <div className="upload-page__form-container">
-                        <div className="upload-page__form-input-container">
-                            <div className="upload-page__form-input-wrapper">
-                                <label htmlFor="videoTitle" className="upload-page__form-label">TITLE YOUR VIDEO</label>
-                                <input type="text" className="upload-page__form-input" name="videoTitle" id="videoTitle" placeholder="Add a title to your video"></input>
+                        <input type="file" name="videoImage" className="upload-page__image" onChange={(event) => handleFile(event)} />
 
-                            </div>
+                        <div className="upload-page__form-container">
+                            <div className="upload-page__form-input-container">
+                                <div className="upload-page__form-input-wrapper">
+                                    <label htmlFor="videoTitle" className="upload-page__form-label">TITLE YOUR VIDEO</label>
+                                    <input type="text" className="upload-page__form-input" name="videoTitle" id="videoTitle" placeholder="Add a title to your video"></input>
 
+                                </div>
 
-                            <div className="upload-page__form-input-wrapper">
-                                <label htmlFor="videoDescription" className="upload-page__form-label">ADD A VIDEO DESCRIPTION</label>
-                                <textarea className="upload-page__form-input upload-page__form-input--textarea" name="videoDescription" id="videoDescription" placeholder="Add a description to your video"></textarea>
+                                <div className="upload-page__form-input-wrapper">
+                                    <label htmlFor="videoDescription" className="upload-page__form-label">ADD A VIDEO DESCRIPTION</label>
+                                    <textarea className="upload-page__form-input upload-page__form-input--textarea" name="videoDescription" id="videoDescription" placeholder="Add a description to your video"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     </div>
 
@@ -91,7 +105,7 @@ function UploadPage() {
                             <span className="upload-page__publish-text">PUBLISH</span>
                         </button>
 
-                    <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
+                        <Link to="/videos" className="upload-page__cancel">CANCEL</Link>
 
                     </div>
                 </form>

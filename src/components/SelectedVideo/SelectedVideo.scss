@@ -194,10 +194,7 @@
         width: 10%;
 
         @include mobile {
-            // width: 26%;
-            // margin-right: 1rem;
             width: 27%;
-    //  margin-right: 1rem;
         }
 
         @include tablet {
