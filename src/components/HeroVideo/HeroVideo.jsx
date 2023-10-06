@@ -1,8 +1,4 @@
 import "./HeroVideo.scss";
-import PlayButton from "../../assets/icons/play.svg";
-import ScrubImage from "../../assets/icons/scrub.svg";
-import FullScreen from "../../assets/icons/fullscreen.svg";
-import VolumeUp from "../../assets/icons/volume_up.svg";
 
 function HeroVideo({ selectedVideoDetail }) {
 

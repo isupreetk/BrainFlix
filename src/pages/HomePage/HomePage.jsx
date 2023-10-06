@@ -23,6 +23,8 @@ function HomePage() {
 
   const [videos, setVideos] = useState([]);
   const [selectedVideoDetail, setSelectedVideoDetail] = useState({});
+
+  // eslint-disable-next-line
   const [commentId, setCommentId] = useState("");
 
   function formValidation() {
@@ -102,6 +104,7 @@ function HomePage() {
       .catch((error) => {
         console.log(error);
       })
+      // eslint-disable-next-line
   }, [])
 
 
@@ -112,6 +115,7 @@ function HomePage() {
   else if (videos.length > 0){
     getSelectedVideo(videos[0].id);
   }
+  // eslint-disable-next-line
   }, [id])
 
   let upNextVideoList = videos.filter((video) => {
